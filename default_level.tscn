@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ns3do5b8cw6k" path="res://controller.tscn" id="2_fh0py"]
 
 [node name="DefaultLevel" type="Node2D"]
+process_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

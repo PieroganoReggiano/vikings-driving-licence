@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://cakjv3ndh1j4g"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_shy4p"]
+
+[node name="Menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_shy4p")
+
+[node name="ButtonResume" type="Button" parent="."]
+offset_left = 424.0
+offset_top = 214.0
+offset_right = 770.0
+offset_bottom = 457.0
+text = "restart"
+
+[node name="ButtonRestart" type="Button" parent="."]
+offset_left = 65.0
+offset_top = 93.0
+offset_right = 411.0
+offset_bottom = 336.0
+text = "resume"
+
+[node name="ButtonQuit" type="Button" parent="."]
+offset_left = 755.0
+offset_top = 399.0
+offset_right = 1101.0
+offset_bottom = 642.0
+text = "Quit"
+
+[connection signal="pressed" from="ButtonResume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="ButtonRestart" to="." method="_on_button_restart_pressed"]
+[connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]

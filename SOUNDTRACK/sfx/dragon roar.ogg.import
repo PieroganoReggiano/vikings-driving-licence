@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://k04bpwft5cxm"
+path="res://.godot/imported/dragon roar.ogg-1fa2624ef4f855b5e6b640ba281ff62b.oggvorbisstr"
+
+[deps]
+
+source_file="res://SOUNDTRACK/sfx/dragon roar.ogg"
+dest_files=["res://.godot/imported/dragon roar.ogg-1fa2624ef4f855b5e6b640ba281ff62b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

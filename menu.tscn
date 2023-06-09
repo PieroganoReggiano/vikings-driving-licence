@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://brrlm188bk1y2"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_q7rni"]
+
+[node name="Menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_q7rni")
+
+[node name="ButtonPlay" type="Button" parent="."]
+offset_left = 103.0
+offset_top = 96.0
+offset_right = 449.0
+offset_bottom = 339.0
+text = "Play easy mode"
+
+[node name="ButtonQuit" type="Button" parent="."]
+offset_left = 606.0
+offset_top = 231.0
+offset_right = 952.0
+offset_bottom = 474.0
+text = "Quit"
+
+[connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=5 format=3 uid="uid://djtjvvka556f"]
+
+[ext_resource type="Script" path="res://music_player.gd" id="1_dnnvr"]
+[ext_resource type="AudioStream" uid="uid://2sll01ugomeq" path="res://SOUNDTRACK/Music/Main menu theme.ogg" id="2_5rdna"]
+[ext_resource type="AudioStream" uid="uid://do4lfvrscdd8n" path="res://SOUNDTRACK/Music/Level 1 theme.ogg" id="3_aibji"]
+[ext_resource type="AudioStream" uid="uid://1ho0u1edoeuo" path="res://SOUNDTRACK/Music/Pause menu theme.ogg" id="3_okut3"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+script = ExtResource("1_dnnvr")
+menu_track = ExtResource("2_5rdna")
+pause_menu_track = ExtResource("3_okut3")
+level1_track = ExtResource("3_aibji")
