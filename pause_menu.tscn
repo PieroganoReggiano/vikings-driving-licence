@@ -7,18 +7,18 @@ process_mode = 3
 script = ExtResource("1_shy4p")
 
 [node name="ButtonResume" type="Button" parent="."]
-offset_left = 424.0
-offset_top = 214.0
-offset_right = 770.0
-offset_bottom = 457.0
-text = "restart"
+offset_left = 16.0
+offset_top = 30.0
+offset_right = 362.0
+offset_bottom = 273.0
+text = "resume"
 
 [node name="ButtonRestart" type="Button" parent="."]
-offset_left = 65.0
-offset_top = 93.0
-offset_right = 411.0
-offset_bottom = 336.0
-text = "resume"
+offset_left = 392.0
+offset_top = 234.0
+offset_right = 738.0
+offset_bottom = 477.0
+text = "restart"
 
 [node name="ButtonQuit" type="Button" parent="."]
 offset_left = 755.0
