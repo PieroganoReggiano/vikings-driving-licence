@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://csxb751gb82hv"]
+
+[ext_resource type="PackedScene" uid="uid://cptgihmal4v0e" path="res://dragon.tscn" id="1_hcsse"]
+[ext_resource type="PackedScene" uid="uid://ns3do5b8cw6k" path="res://controller.tscn" id="2_fh0py"]
+
+[node name="DefaultLevel" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Dragon" parent="." instance=ExtResource("1_hcsse")]
+
+[node name="Controller" parent="." instance=ExtResource("2_fh0py")]
+dragon_controller_path = "../Dragon/DragonControl"
+camera_path = "../Camera2D"

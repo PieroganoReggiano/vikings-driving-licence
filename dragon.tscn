@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cptgihmal4v0e"]
+
+[ext_resource type="Script" path="res://dragon.gd" id="1_k7kuq"]
+[ext_resource type="Texture2D" uid="uid://dywewrtxspofp" path="res://icon.svg" id="1_ym0lg"]
+[ext_resource type="PackedScene" uid="uid://cfpf50fet2656" path="res://dragon_control.tscn" id="2_ih1go"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6770u"]
+radius = 60.0
+height = 200.0
+
+[node name="Dragon" type="RigidBody2D"]
+script = ExtResource("1_k7kuq")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(1, 1.5)
+texture = ExtResource("1_ym0lg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6770u")
+
+[node name="DragonControl" parent="." instance=ExtResource("2_ih1go")]
