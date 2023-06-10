@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://bbhhhgxl0vkir"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_leldd"]
-[ext_resource type="SpriteFrames" path="res://work_textures/level_water.res" id="2_ympuv"]
+[ext_resource type="SpriteFrames" uid="uid://b2ttclh2cuvuu" path="res://work_textures/level_water.res" id="2_ympuv"]
 [ext_resource type="PackedScene" uid="uid://b2ugbkp33cm32" path="res://dragon.tscn" id="3_18jqu"]
 [ext_resource type="PackedScene" uid="uid://crv2dmupgiyg6" path="res://pacholek.tscn" id="5_s38f8"]
-[ext_resource type="SpriteFrames" path="res://work_textures/flying_enemy.res" id="7_85qv5"]
+[ext_resource type="SpriteFrames" uid="uid://ftbxeufrpo4o" path="res://work_textures/flying_enemy.res" id="7_85qv5"]
 [ext_resource type="PackedScene" uid="uid://dgrhyc33ixujt" path="res://lose_trigger.tscn" id="7_ovuxy"]
 [ext_resource type="PackedScene" uid="uid://mqnbbxtecbx7" path="res://win_trigger.tscn" id="8_1k2lw"]
 [ext_resource type="Script" path="res://enemy_flying.gd" id="8_6xcl1"]
@@ -61,7 +61,7 @@ position = Vector2(272, 56)
 rotation = 1.5708
 sprite_frames = ExtResource("7_85qv5")
 animation = &"idle"
-frame_progress = 0.915467
+frame_progress = 0.635339
 script = ExtResource("8_6xcl1")
 fireball_scene = ExtResource("9_d8pex")
 

@@ -5,6 +5,9 @@ var fireball_wait = 0
 
 @export var fireball_scene : Resource
 
+func _ready():
+	play("idle")
+
 func _on_timer_timeout():
 	if fireball_wait <= 0:
 		fireball_wait = fireball_cooldown
