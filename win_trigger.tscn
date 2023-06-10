@@ -1,14 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://mqnbbxtecbx7"]
+[gd_scene load_steps=4 format=3 uid="uid://mqnbbxtecbx7"]
 
 [ext_resource type="Script" path="res://win_trigger.gd" id="1_2rrfb"]
+[ext_resource type="Texture2D" uid="uid://cw0f35xnb8puy" path="res://work_textures/rune_wealth.png" id="2_wrfw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahrqm"]
-size = Vector2(100, 100)
+size = Vector2(66, 64)
 
 [node name="WinTrigger" type="Area2D"]
 script = ExtResource("1_2rrfb")
 
 [node name="Area" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ahrqm")
+
+[node name="RuneWealth" type="Sprite2D" parent="."]
+modulate = Color(0.470588, 0.701961, 0.572549, 1)
+position = Vector2(5, 0)
+texture = ExtResource("2_wrfw5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
