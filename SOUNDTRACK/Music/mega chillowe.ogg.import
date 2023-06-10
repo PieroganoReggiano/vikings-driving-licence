@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8s30o4oqa7lu"
+path="res://.godot/imported/mega chillowe.ogg-6e8b060c06e60aca288566b12b6288af.oggvorbisstr"
+
+[deps]
+
+source_file="res://SOUNDTRACK/Music/mega chillowe.ogg"
+dest_files=["res://.godot/imported/mega chillowe.ogg-6e8b060c06e60aca288566b12b6288af.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cislwjwy4aus6"
+path="res://.godot/imported/guitar track.ogg-05249c134d62880d9085978d38b122fa.oggvorbisstr"
+
+[deps]
+
+source_file="res://SOUNDTRACK/Music/guitar track.ogg"
+dest_files=["res://.godot/imported/guitar track.ogg-05249c134d62880d9085978d38b122fa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
