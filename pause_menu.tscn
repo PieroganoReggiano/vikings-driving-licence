@@ -1,32 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://cakjv3ndh1j4g"]
+[gd_scene load_steps=6 format=3 uid="uid://c33mwnecke708"]
 
 [ext_resource type="Script" path="res://pause_menu.gd" id="1_shy4p"]
+[ext_resource type="Texture2D" uid="uid://byxrxl05710y6" path="res://work_textures/pause_background.png" id="3_d0l4b"]
+[ext_resource type="Texture2D" uid="uid://cn8snv4wdkmmw" path="res://work_textures/pause_buttons_continue.png" id="3_ffmcw"]
+[ext_resource type="Texture2D" uid="uid://qwc5v1na4o8s" path="res://work_textures/pause_buttons_restart.png" id="4_wcvl5"]
+[ext_resource type="Texture2D" uid="uid://c2v7xdgb07w13" path="res://work_textures/pause_buttons_main.png" id="5_7ydfv"]
 
 [node name="Menu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_shy4p")
 
-[node name="ButtonResume" type="Button" parent="."]
-offset_left = 16.0
-offset_top = 30.0
-offset_right = 362.0
-offset_bottom = 273.0
-text = "resume"
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.239216, 0.027451, 0.027451, 0.25098)
 
-[node name="ButtonRestart" type="Button" parent="."]
-offset_left = 392.0
-offset_top = 234.0
-offset_right = 738.0
-offset_bottom = 477.0
-text = "restart"
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -39.5
+offset_right = 96.0
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_d0l4b")
 
-[node name="ButtonQuit" type="Button" parent="."]
-offset_left = 755.0
-offset_top = 399.0
-offset_right = 1101.0
-offset_bottom = 642.0
-text = "Quit"
+[node name="ButtonResume" type="TextureButton" parent="TextureRect"]
+offset_top = 15.0
+offset_right = 64.0
+offset_bottom = 79.0
+texture_normal = ExtResource("3_ffmcw")
 
-[connection signal="pressed" from="ButtonResume" to="." method="_on_button_resume_pressed"]
-[connection signal="pressed" from="ButtonRestart" to="." method="_on_button_restart_pressed"]
-[connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]
+[node name="ButtonRestart" type="TextureButton" parent="TextureRect"]
+offset_left = 64.0
+offset_top = 15.0
+offset_right = 128.0
+offset_bottom = 79.0
+texture_normal = ExtResource("4_wcvl5")
+
+[node name="ButtonQuit" type="TextureButton" parent="TextureRect"]
+offset_left = 128.0
+offset_top = 15.0
+offset_right = 192.0
+offset_bottom = 79.0
+texture_normal = ExtResource("5_7ydfv")
+
+[connection signal="pressed" from="TextureRect/ButtonResume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="TextureRect/ButtonRestart" to="." method="_on_button_restart_pressed"]
+[connection signal="pressed" from="TextureRect/ButtonQuit" to="." method="_on_button_quit_pressed"]
