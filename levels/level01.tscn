@@ -1,0 +1,135 @@
+[gd_scene load_steps=8 format=3 uid="uid://duh5my8ov1o5x"]
+
+[ext_resource type="PackedScene" uid="uid://dwxng8ke0lcpi" path="res://dragon.tscn" id="1_8qery"]
+[ext_resource type="Texture2D" uid="uid://bevwavhr888jh" path="res://work_textures/bg1.png" id="1_tihsa"]
+[ext_resource type="PackedScene" uid="uid://ns3do5b8cw6k" path="res://controller.tscn" id="2_aadfa"]
+[ext_resource type="PackedScene" uid="uid://crv2dmupgiyg6" path="res://pacholek.tscn" id="3_8yruf"]
+[ext_resource type="PackedScene" uid="uid://bvh6rdk877c82" path="res://snieg.tscn" id="5_moa1m"]
+
+[sub_resource type="Gradient" id="Gradient_yvhwv"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.87451, 0.929412, 0.929412, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pd44n"]
+gradient = SubResource("Gradient_yvhwv")
+
+[node name="DefaultLevel" type="Node2D"]
+process_mode = 1
+
+[node name="backfill" type="Sprite2D" parent="."]
+position = Vector2(-5.00006, 4.49998)
+scale = Vector2(4.64844, 687)
+texture = SubResource("GradientTexture1D_pd44n")
+metadata/_edit_lock_ = true
+
+[node name="Bg1" type="Sprite2D" parent="."]
+texture = ExtResource("1_tihsa")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Dragon" parent="." instance=ExtResource("1_8qery")]
+position = Vector2(-210, -124)
+rotation = 1.5708
+
+[node name="Controller" parent="." instance=ExtResource("2_aadfa")]
+dragon_controller_path = "../Dragon/DragonControl"
+camera_path = "../Camera2D"
+
+[node name="cones" type="Node2D" parent="."]
+
+[node name="pacholek7" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-264, -64)
+rotation = 0.261799
+
+[node name="pacholek6" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-296, -126)
+rotation = 1.309
+
+[node name="pacholek5" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-82, -64)
+rotation = 2.35619
+
+[node name="pacholek4" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(134, -83)
+rotation = 1.5708
+
+[node name="pacholek3" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-242, -197)
+rotation = 0.785398
+
+[node name="pacholek2" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(29, -85)
+
+[node name="pacholek" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-178, -66)
+
+[node name="pacholek8" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-151, -191)
+rotation = 0.785398
+
+[node name="pacholek9" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-70, -185)
+rotation = 0.785398
+
+[node name="pacholek10" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(26, -203)
+rotation = -0.523599
+
+[node name="pacholek11" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(136, -229)
+rotation = -0.785398
+
+[node name="pacholek12" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(231, -205)
+rotation = -1.5708
+
+[node name="pacholek13" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(296, -128)
+rotation = 1.5708
+
+[node name="pacholek14" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(192, -13)
+rotation = 0.785398
+
+[node name="pacholek15" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(324, -18)
+rotation = 1.309
+
+[node name="pacholek16" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(147, 74)
+rotation = -1.0472
+
+[node name="pacholek17" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(12, 76)
+rotation = -1.309
+
+[node name="pacholek18" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-112, 47)
+rotation = 0.785398
+
+[node name="pacholek19" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-134, 192)
+rotation = 0.785398
+
+[node name="pacholek20" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(3.00001, 219)
+rotation = -0.523599
+
+[node name="pacholek21" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(118, 224)
+rotation = -0.261799
+
+[node name="pacholek22" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(222, 200)
+rotation = -0.785398
+
+[node name="pacholek23" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(295, 138)
+rotation = 0.785398
+
+[node name="pacholek24" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(323, 59)
+rotation = 1.309
+
+[node name="snieg" parent="." instance=ExtResource("5_moa1m")]
