@@ -34,7 +34,6 @@ metadata/_edit_lock_ = true
 
 [node name="Dragon" parent="." instance=ExtResource("1_8qery")]
 position = Vector2(-210, -124)
-rotation = 1.5708
 
 [node name="Controller" parent="." instance=ExtResource("2_aadfa")]
 dragon_controller_path = "../Dragon/DragonControl"
