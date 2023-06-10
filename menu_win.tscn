@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctitp82qqmy2f"]
+[gd_scene load_steps=9 format=3 uid="uid://ctitp82qqmy2f"]
 
 [ext_resource type="Script" path="res://menu_win.gd" id="1_hs1m7"]
 [ext_resource type="Texture2D" uid="uid://bayig828eq1f4" path="res://work_textures/win_paper.png" id="2_blyp5"]
@@ -12,6 +12,12 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qs4je"]
 bg_color = Color(0.796078, 0.796078, 0.796078, 1)
 border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_188bf"]
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_ftcnl"]
+events = [SubResource("InputEventJoypadButton_188bf")]
 
 [node name="MenuWin" type="CanvasLayer"]
 process_mode = 3
@@ -44,6 +50,7 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxEmpty_clswj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qu8cj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qs4je")
+shortcut = SubResource("Shortcut_ftcnl")
 text = "Next!"
 
 [connection signal="pressed" from="TextureRect/ButtonNext" to="." method="_on_button_next_pressed"]

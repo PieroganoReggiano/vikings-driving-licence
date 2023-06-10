@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://xlaifhutvjrb"]
+[gd_scene load_steps=11 format=3 uid="uid://xlaifhutvjrb"]
 
 [ext_resource type="Script" path="res://menu_lose.gd" id="1_n3b7p"]
-[ext_resource type="Texture2D" path="res://work_textures/restart_paper.png" id="2_etvwa"]
+[ext_resource type="Texture2D" uid="uid://crl404jsbu3nd" path="res://work_textures/restart_paper.png" id="2_etvwa"]
 [ext_resource type="FontFile" uid="uid://cqpi3lwer7438" path="res://DungeonFont.ttf" id="3_walo4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_clswj"]
@@ -12,6 +12,19 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qs4je"]
 bg_color = Color(0.796078, 0.796078, 0.796078, 1)
 border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_prlhm"]
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_aw05l"]
+events = [SubResource("InputEventJoypadButton_prlhm")]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_6it4k"]
+button_index = 1
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_umec5"]
+events = [SubResource("InputEventJoypadButton_6it4k")]
 
 [node name="MenuLose" type="CanvasLayer"]
 process_mode = 3
@@ -40,6 +53,7 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxEmpty_clswj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qu8cj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qs4je")
+shortcut = SubResource("Shortcut_aw05l")
 text = "Restart "
 
 [node name="ButtonMenu" type="Button" parent="."]
@@ -53,6 +67,7 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxEmpty_clswj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qu8cj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qs4je")
+shortcut = SubResource("Shortcut_umec5")
 text = "Back to main menu..."
 
 [connection signal="pressed" from="TextureRect/ButtonRestart" to="." method="_on_button_restart_pressed"]
