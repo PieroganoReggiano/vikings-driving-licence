@@ -205,14 +205,10 @@ default_level_track = null
 layer = 128
 
 [node name="Panel" type="ColorRect" parent="Transition"]
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.167
 offset_left = -2000.0
-offset_right = -2000.0
-offset_bottom = 159.68
+offset_right = -720.0
+offset_bottom = 320.0
 grow_horizontal = 2
-grow_vertical = 2
 color = Color(0.6, 0.760784, 0.858824, 1)
 
 [node name="TextureRect" type="TextureRect" parent="Transition/Panel"]
@@ -238,16 +234,10 @@ texture = ExtResource("3_pgm7d")
 flip_h = true
 
 [node name="Panel2" type="ColorRect" parent="Transition"]
-anchors_preset = -1
-anchor_top = 0.167
-anchor_right = 1.0
-anchor_bottom = 0.333
 offset_left = -2000.0
-offset_top = -0.319992
-offset_right = -2000.0
-offset_bottom = 160.32
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = 160.0
+offset_right = -720.0
+offset_bottom = 480.0
 color = Color(0.364706, 0.545098, 0.701961, 1)
 
 [node name="TextureRect" type="TextureRect" parent="Transition/Panel2"]
@@ -273,16 +263,10 @@ texture = ExtResource("3_pgm7d")
 flip_h = true
 
 [node name="Panel3" type="ColorRect" parent="Transition"]
-anchors_preset = -1
-anchor_top = 0.333
-anchor_right = 1.0
-anchor_bottom = 0.5
 offset_left = -2000.0
-offset_top = 0.320007
-offset_right = -2000.0
-offset_bottom = 160.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = 320.0
+offset_right = -720.0
+offset_bottom = 640.0
 color = Color(0.301961, 0.415686, 0.580392, 1)
 
 [node name="TextureRect" type="TextureRect" parent="Transition/Panel3"]
