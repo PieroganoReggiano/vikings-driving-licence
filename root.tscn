@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://root.gd" id="1_7520l"]
 [ext_resource type="PackedScene" uid="uid://djtjvvka556f" path="res://music_player.tscn" id="2_vt1vo"]
-[ext_resource type="PackedScene" uid="uid://ns3do5b8cw6k" path="res://controller.tscn" id="3_5f3ve"]
+[ext_resource type="PackedScene" path="res://controller.tscn" id="3_5f3ve"]
 
 [node name="Root" type="Node"]
 process_mode = 3

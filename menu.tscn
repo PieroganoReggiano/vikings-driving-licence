@@ -1,24 +1,105 @@
-[gd_scene load_steps=2 format=3 uid="uid://brrlm188bk1y2"]
+[gd_scene load_steps=12 format=3 uid="uid://dej6jelni5awa"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_q7rni"]
+[ext_resource type="Texture2D" uid="uid://cindowwyuxseg" path="res://work_textures/menu_shadow.png" id="2_xwpao"]
+[ext_resource type="Texture2D" uid="uid://dsgl10vur0y5c" path="res://work_textures/menu_paper.png" id="4_8guy1"]
+[ext_resource type="Texture2D" uid="uid://de7cwypfp47m3" path="res://work_textures/dragon_portrait.png" id="4_wunfg"]
+[ext_resource type="FontFile" uid="uid://cqpi3lwer7438" path="res://DungeonFont.ttf" id="5_bxfm3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_clswj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qu8cj"]
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qs4je"]
+bg_color = Color(0.796078, 0.796078, 0.796078, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfjey"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myi2s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6e1ib"]
+bg_color = Color(0.792157, 0.792157, 0.792157, 1)
 
 [node name="Menu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_q7rni")
 
-[node name="ButtonPlay" type="Button" parent="."]
-offset_left = 103.0
-offset_top = 96.0
-offset_right = 449.0
-offset_bottom = 339.0
-text = "Play easy mode"
+[node name="MenuShadow" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_right = 320.0
+offset_bottom = 480.0
+grow_horizontal = 2
+texture = ExtResource("2_xwpao")
+
+[node name="DragonPortrait" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -362.0
+offset_top = 11.0
+offset_right = 278.0
+offset_bottom = 491.0
+grow_horizontal = 2
+texture = ExtResource("4_wunfg")
+
+[node name="DragonPortrait2" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -261.0
+offset_top = 11.0
+offset_right = 379.0
+offset_bottom = 491.0
+grow_horizontal = 2
+texture = ExtResource("4_wunfg")
+flip_h = true
+
+[node name="MenuPaper" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_top = 76.0
+offset_right = 320.0
+offset_bottom = 556.0
+grow_horizontal = 2
+texture = ExtResource("4_8guy1")
+
+[node name="ButtonPlay" type="Button" parent="MenuPaper"]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 254.0
+offset_right = 454.0
+offset_bottom = 284.0
+theme_override_colors/font_color = Color(0.6, 0.490196, 0.462745, 1)
+theme_override_fonts/font = ExtResource("5_bxfm3")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_clswj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qu8cj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qs4je")
+text = "Play!"
 
 [node name="ButtonQuit" type="Button" parent="."]
-offset_left = 606.0
-offset_top = 231.0
-offset_right = 952.0
-offset_bottom = 474.0
-text = "Quit"
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -68.0
+offset_top = 386.0
+offset_right = 68.0
+offset_bottom = 419.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.74902, 0.14902, 0.317647, 1)
+theme_override_fonts/font = ExtResource("5_bxfm3")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lfjey")
+theme_override_styles/hover = SubResource("StyleBoxFlat_myi2s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6e1ib")
+text = "Give up!"
 
-[connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="MenuPaper/ButtonPlay" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]
