@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://byv7i8jiiwfcy"]
+
+[ext_resource type="Texture2D" uid="uid://dw7skdc0jv2nl" path="res://work_textures/cone.png" id="1_v5bpw"]
+
+[resource]
+atlas = ExtResource("1_v5bpw")
+region = Rect2(0, 0, 48, 48)

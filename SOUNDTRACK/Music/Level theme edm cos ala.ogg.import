@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://waddrljua8io"
+path="res://.godot/imported/Level theme edm cos ala.ogg-26e6df8e5b7887570bc26bfde64c1232.oggvorbisstr"
+
+[deps]
+
+source_file="res://SOUNDTRACK/Music/Level theme edm cos ala.ogg"
+dest_files=["res://.godot/imported/Level theme edm cos ala.ogg-26e6df8e5b7887570bc26bfde64c1232.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

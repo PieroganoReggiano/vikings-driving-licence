@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://buf2bf0cajvdt"
+path="res://.godot/imported/walking dragon sound.ogg-e088d0d6ccf7d7394b8e3e57d1c594bc.oggvorbisstr"
+
+[deps]
+
+source_file="res://SOUNDTRACK/sfx/walking dragon sound.ogg"
+dest_files=["res://.godot/imported/walking dragon sound.ogg-e088d0d6ccf7d7394b8e3e57d1c594bc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
