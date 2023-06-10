@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvh6rdk877c82"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6anb0"]
+emission_shape = 3
+emission_box_extents = Vector3(600, 1, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = -69.0
+initial_velocity_max = 69.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 5.0
+
+[node name="snieg" type="GPUParticles2D"]
+position = Vector2(0, -330)
+amount = 400
+process_material = SubResource("ParticleProcessMaterial_6anb0")
+lifetime = 10.0
+fixed_fps = 60

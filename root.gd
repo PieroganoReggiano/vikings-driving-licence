@@ -1,6 +1,7 @@
 extends Node
 
 const default_level = preload("res://default_level.tscn")
+const level01 = preload("res://levels/level01.tscn")
 
 const menu_scene = preload("res://menu.tscn")
 const pause_menu_scene = preload("res://pause_menu.tscn")
@@ -11,7 +12,7 @@ func restart():
 
 func play():
 	if $"Level" == null:
-		load_level(default_level)
+		load_level(level01)
 	drop_menu()
 		
 func quit():
@@ -54,7 +55,7 @@ func drop_level():
 
 func load_level(level):
 	drop_level()
-	var level_created = default_level.instantiate()
+	var level_created = level.instantiate()
 	add_child(level_created)
 	level_created.name = "Level"
 	get_tree().paused = false
