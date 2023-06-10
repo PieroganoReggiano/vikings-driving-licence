@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0xc3m1arsaca"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_leldd"]
+[ext_resource type="AudioStream" uid="uid://dvuf14l867edx" path="res://SOUNDTRACK/Music/More complex melody and still fierce drums.ogg" id="2_kyb7c"]
+[ext_resource type="SpriteFrames" uid="uid://b2ttclh2cuvuu" path="res://work_textures/level_water.res" id="2_ympuv"]
+[ext_resource type="PackedScene" uid="uid://b2ugbkp33cm32" path="res://dragon.tscn" id="3_18jqu"]
+[ext_resource type="PackedScene" uid="uid://crv2dmupgiyg6" path="res://pacholek.tscn" id="5_s38f8"]
+[ext_resource type="PackedScene" uid="uid://dgrhyc33ixujt" path="res://lose_trigger.tscn" id="7_ovuxy"]
+[ext_resource type="PackedScene" uid="uid://mqnbbxtecbx7" path="res://win_trigger.tscn" id="8_1k2lw"]
+
+[node name="Level" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_leldd")
+level_music = ExtResource("2_kyb7c")
+
+[node name="Bg" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_ympuv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Dragon" parent="." instance=ExtResource("3_18jqu")]
+position = Vector2(-252, -166)
+
+[node name="cones" type="Node2D" parent="."]
+
+[node name="pacholek7" parent="cones" instance=ExtResource("5_s38f8")]
+position = Vector2(-278, 38)
+rotation = 0.261799
+
+[node name="pacholek8" parent="cones" instance=ExtResource("5_s38f8")]
+position = Vector2(-277, -19)
+rotation = 0.261799
+
+[node name="LoseTrigger2" parent="." instance=ExtResource("7_ovuxy")]
+position = Vector2(-11, -333)
+rotation = 0.00756871
+scale = Vector2(7, 1)
+
+[node name="LoseTrigger3" parent="." instance=ExtResource("7_ovuxy")]
+position = Vector2(3, 342)
+rotation = 0.0268997
+scale = Vector2(7, 1)
+
+[node name="LoseTrigger4" parent="." instance=ExtResource("7_ovuxy")]
+position = Vector2(420, 43)
+rotation = 1.52541
+scale = Vector2(8.40037, 1)
+
+[node name="LoseTrigger7" parent="." instance=ExtResource("7_ovuxy")]
+position = Vector2(-386, -65)
+rotation = 1.55615
+scale = Vector2(9.41271, 1)
+
+[node name="WinTrigger" parent="." instance=ExtResource("8_1k2lw")]
+position = Vector2(269, -173)
