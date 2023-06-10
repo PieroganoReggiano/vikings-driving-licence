@@ -12,7 +12,7 @@
 script = ExtResource("1_dnnvr")
 menu_track = ExtResource("2_5rdna")
 pause_menu_track = ExtResource("3_okut3")
-level1_track = ExtResource("3_aibji")
+default_level_track = ExtResource("3_aibji")
 win_track = ExtResource("5_eli5w")
 lose_track = ExtResource("6_fejag")
 final_track = ExtResource("7_ag488")

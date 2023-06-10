@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0xc3m1arsaca"]
+[gd_scene load_steps=8 format=3 uid="uid://d0xc3m1arsaca"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_leldd"]
+[ext_resource type="AudioStream" uid="uid://dvuf14l867edx" path="res://SOUNDTRACK/Music/More complex melody and still fierce drums.ogg" id="2_kyb7c"]
 [ext_resource type="SpriteFrames" uid="uid://b2ttclh2cuvuu" path="res://work_textures/level_water.res" id="2_ympuv"]
 [ext_resource type="PackedScene" uid="uid://b2ugbkp33cm32" path="res://dragon.tscn" id="3_18jqu"]
 [ext_resource type="PackedScene" uid="uid://crv2dmupgiyg6" path="res://pacholek.tscn" id="5_s38f8"]
@@ -10,6 +11,7 @@
 [node name="Level" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_leldd")
+level_music = ExtResource("2_kyb7c")
 
 [node name="Bg" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_ympuv")

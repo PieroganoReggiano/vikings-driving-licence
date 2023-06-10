@@ -64,17 +64,17 @@ func show_lose():
 		music().play_lose()
 
 func drop_menu():
-	if $"Menu" != null:
+	if get_node_or_null("Menu") != null:
 		var menu = $"Menu"
 		remove_child(menu)
 		menu.queue_free()
 	get_tree().paused = false
 	if music():
 		if is_any_game():
-			music().play_level()
+			music().return_to_level()
 
 func is_any_game():
-	return $"Level" != null
+	return get_node_or_null("Level") != null
 
 func drop_level():
 	if is_any_game():
@@ -89,6 +89,11 @@ func load_level(level):
 	level_created.name = "Level"
 	current_level_resource = level
 	get_tree().paused = false
+	if music():
+		if level_created.level_music != null:
+			music().prepare_level(level_created.level_music)
+		else:
+			music().prepare_default_level()
 
 func next_level():
 	if not is_any_game():
@@ -106,7 +111,7 @@ func _ready():
 	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		if $"Menu" == null:
+		if get_node_or_null("Menu") == null:
 			show_menu()
 	if Input.is_action_just_pressed("hack_next_level"):
 		next_level()
@@ -130,5 +135,5 @@ func process_game_status():
 		show_win()
 
 func music():
-	return $"MusicPlayer"
+	return get_node_or_null("MusicPlayer")
 
