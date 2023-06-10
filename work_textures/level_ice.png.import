@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn0x40fjjiuuo"
-path="res://.godot/imported/rune.png-255803ea29ecd9c566c69aab24b77a61.ctex"
+uid="uid://biieab4erm3f2"
+path="res://.godot/imported/level_ice.png-9e8ebfbe439ec87011e0dabde411fb32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://work_textures/rune.png"
-dest_files=["res://.godot/imported/rune.png-255803ea29ecd9c566c69aab24b77a61.ctex"]
+source_file="res://work_textures/level_ice.png"
+dest_files=["res://.godot/imported/level_ice.png-9e8ebfbe439ec87011e0dabde411fb32.ctex"]
 
 [params]
 
