@@ -40,6 +40,8 @@ script = ExtResource("1_g6fki")
 texture = ExtResource("2_2au0p")
 
 [node name="Area2D" type="Area2D" parent="sprite_up"]
+collision_layer = 4
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sprite_up/Area2D"]
 shape = SubResource("CircleShape2D_8s2s0")
@@ -62,4 +64,5 @@ lifetime = 0.2
 one_shot = true
 explosiveness = 1.0
 
+[connection signal="area_entered" from="sprite_up/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="sprite_up/Area2D" to="." method="_on_area_2d_body_entered"]

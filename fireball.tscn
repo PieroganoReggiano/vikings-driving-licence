@@ -1,21 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://my3b1hkmkum5"]
 
 [ext_resource type="Script" path="res://fireball.gd" id="1_168lg"]
-[ext_resource type="Texture2D" uid="uid://djm88oebp6m87" path="res://work_textures/fireball.png" id="1_y5dxs"]
+[ext_resource type="SpriteFrames" uid="uid://i7o3m3cnl0aw" path="res://work_textures/fireball.res" id="3_87584"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhoeo"]
 radius = 16.0
 
-[node name="Fireball" type="AnimatableBody2D"]
-collision_layer = 0
-collision_mask = 0
-sync_to_physics = false
+[node name="Fireball" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_168lg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bhoeo")
 
-[node name="Fireball" type="Sprite2D" parent="."]
-texture = ExtResource("1_y5dxs")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_87584")
+animation = &"idle"

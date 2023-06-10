@@ -2,7 +2,7 @@ extends RigidBody2D
 
 var move_vector : Vector2 = Vector2.ZERO
 var do_fire = false
-var fireball_wait = -1
+var fireball_wait = 0.5
 
 @export var default_resistance : float = 600.0
 @export var sqrt_resistance : float = 9000.0
@@ -77,6 +77,6 @@ func handle_fire(delta):
 	var fireball = fireball_scene.instantiate()
 	fireball.position = position + direction * 48
 	$"..".add_child(fireball)
-	fireball.push(direction * 6)
+	fireball.push(direction * 6 + linear_velocity/60)
 	fireball_wait = fireball_cooldown
 	
