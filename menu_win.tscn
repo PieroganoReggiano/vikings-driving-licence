@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctitp82qqmy2f"]
+[gd_scene load_steps=10 format=3 uid="uid://ctitp82qqmy2f"]
 
 [ext_resource type="Script" path="res://menu_win.gd" id="1_hs1m7"]
 [ext_resource type="Texture2D" uid="uid://bayig828eq1f4" path="res://work_textures/win_paper.png" id="2_blyp5"]
@@ -16,8 +16,13 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 [sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_188bf"]
 pressed = true
 
+[sub_resource type="InputEventKey" id="InputEventKey_4p3jw"]
+device = -1
+keycode = 32
+unicode = 32
+
 [sub_resource type="Shortcut" id="Shortcut_ftcnl"]
-events = [SubResource("InputEventJoypadButton_188bf")]
+events = [SubResource("InputEventJoypadButton_188bf"), SubResource("InputEventKey_4p3jw")]
 
 [node name="MenuWin" type="CanvasLayer"]
 process_mode = 3
