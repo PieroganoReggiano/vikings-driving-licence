@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://mqnbbxtecbx7"]
+[gd_scene load_steps=5 format=3 uid="uid://mqnbbxtecbx7"]
 
 [ext_resource type="Script" path="res://win_trigger.gd" id="1_2rrfb"]
-[ext_resource type="Texture2D" uid="uid://cw0f35xnb8puy" path="res://work_textures/rune_wealth.png" id="2_wrfw5"]
+[ext_resource type="SpriteFrames" uid="uid://bxkr146p7alkv" path="res://work_textures/rune.res" id="2_jsn7q"]
+[ext_resource type="Script" path="res://AutoAnimatedSprite.gd" id="3_b7nl4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahrqm"]
 size = Vector2(66, 64)
@@ -12,9 +13,12 @@ script = ExtResource("1_2rrfb")
 [node name="Area" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ahrqm")
 
-[node name="RuneWealth" type="Sprite2D" parent="."]
+[node name="RuneWealth" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.470588, 0.701961, 0.572549, 1)
 position = Vector2(5, 0)
-texture = ExtResource("2_wrfw5")
+sprite_frames = ExtResource("2_jsn7q")
+animation = &"wealth"
+frame_progress = 0.769764
+script = ExtResource("3_b7nl4")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
