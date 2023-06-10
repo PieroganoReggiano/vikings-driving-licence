@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://xlaifhutvjrb"]
 
 [ext_resource type="Script" path="res://menu_lose.gd" id="1_n3b7p"]
-[ext_resource type="Texture2D" uid="uid://crl404jsbu3nd" path="res://work_textures/restart_paper.png" id="2_etvwa"]
+[ext_resource type="Texture2D" path="res://work_textures/restart_paper.png" id="2_etvwa"]
 [ext_resource type="FontFile" uid="uid://cqpi3lwer7438" path="res://DungeonFont.ttf" id="3_walo4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_clswj"]
