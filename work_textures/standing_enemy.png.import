@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0wi7ddsayq5x"
-path="res://.godot/imported/dragon.png-f88fa13ab19a9833d9fd37ac85839c11.ctex"
+uid="uid://ci6ghnagwtoub"
+path="res://.godot/imported/standing_enemy.png-f88ae59234aa46fbe6a851ec95c9b193.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://work_textures/dragon.png"
-dest_files=["res://.godot/imported/dragon.png-f88fa13ab19a9833d9fd37ac85839c11.ctex"]
+source_file="res://work_textures/standing_enemy.png"
+dest_files=["res://.godot/imported/standing_enemy.png-f88ae59234aa46fbe6a851ec95c9b193.ctex"]
 
 [params]
 

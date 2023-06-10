@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0wi7ddsayq5x"
-path="res://.godot/imported/dragon.png-f88fa13ab19a9833d9fd37ac85839c11.ctex"
+uid="uid://dwo0ursfcxyah"
+path="res://.godot/imported/flying_enemy.png-e849ed3aeeecfbcd15af1d79f6eea46d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://work_textures/dragon.png"
-dest_files=["res://.godot/imported/dragon.png-f88fa13ab19a9833d9fd37ac85839c11.ctex"]
+source_file="res://work_textures/flying_enemy.png"
+dest_files=["res://.godot/imported/flying_enemy.png-e849ed3aeeecfbcd15af1d79f6eea46d.ctex"]
 
 [params]
 
