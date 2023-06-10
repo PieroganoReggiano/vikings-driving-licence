@@ -12,7 +12,7 @@ func _on_button_resume_pressed():
 	$"..".play()
 	
 func _on_button_restart_pressed():
-	$"..".restart()
+	$"..".restart_level()
 	
 
 func _on_button_quit_pressed():

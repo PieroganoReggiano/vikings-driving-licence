@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_button_restart_pressed():
-	$"..".restart()
+	$"..".restart_level()
 
 
 func _on_button_menu_pressed():

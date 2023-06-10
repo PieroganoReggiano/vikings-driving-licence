@@ -14,6 +14,10 @@ var current_level_resource : Resource
 func restart():
 	load_level(level01)
 	drop_menu()
+	
+func restart_level():
+	load_level(current_level_resource)
+	drop_menu()
 
 func play():
 	if $"Level" == null:
