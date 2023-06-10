@@ -70,7 +70,7 @@ func _physics_process(delta):
 	#rotation += (turn_speed * move_vector.x * delta)
 
 func get_direction_vector():
-	return Vector2(sin(rotation), -cos(rotation))
+	return Vector2(cos(rotation), sin(rotation))
 
 func handle_fire(delta):
 	fireball_wait -= delta
