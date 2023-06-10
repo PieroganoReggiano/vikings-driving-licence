@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://duh5my8ov1o5x"]
+[gd_scene load_steps=14 format=3 uid="uid://duh5my8ov1o5x"]
 
 [ext_resource type="PackedScene" uid="uid://b2ugbkp33cm32" path="res://dragon.tscn" id="1_8qery"]
 [ext_resource type="Script" path="res://level.gd" id="1_csc6m"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bvh6rdk877c82" path="res://snieg.tscn" id="5_moa1m"]
 [ext_resource type="PackedScene" uid="uid://mqnbbxtecbx7" path="res://win_trigger.tscn" id="7_oq5aa"]
 [ext_resource type="PackedScene" uid="uid://dgrhyc33ixujt" path="res://lose_trigger.tscn" id="8_0hhg5"]
+[ext_resource type="SpriteFrames" uid="uid://bxkr146p7alkv" path="res://work_textures/rune.res" id="10_ik1pj"]
+[ext_resource type="Script" path="res://AutoAnimatedSprite.gd" id="11_0mkmh"]
 
 [sub_resource type="Gradient" id="Gradient_yvhwv"]
 offsets = PackedFloat32Array(1)
@@ -32,6 +34,12 @@ metadata/_edit_lock_ = true
 [node name="Bg1" type="Sprite2D" parent="."]
 texture = ExtResource("1_tihsa")
 metadata/_edit_lock_ = true
+
+[node name="RuneRide" type="AnimatedSprite2D" parent="."]
+position = Vector2(-247, -130)
+sprite_frames = ExtResource("10_ik1pj")
+animation = &"ride"
+script = ExtResource("11_0mkmh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

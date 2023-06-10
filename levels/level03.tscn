@@ -1,12 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2g61ky7rbwby"]
+[gd_scene load_steps=12 format=3 uid="uid://c2g61ky7rbwby"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_vpn6y"]
 [ext_resource type="PackedScene" path="res://levels/level04.tscn" id="2_0f0io"]
 [ext_resource type="SpriteFrames" uid="uid://bevbo85q8jsmd" path="res://work_textures/level_ice.res" id="2_n1qxw"]
 [ext_resource type="PackedScene" uid="uid://b2ugbkp33cm32" path="res://dragon.tscn" id="3_6ft6n"]
 [ext_resource type="AudioStream" uid="uid://8s30o4oqa7lu" path="res://SOUNDTRACK/Music/mega chillowe.ogg" id="3_8u5dr"]
+[ext_resource type="SpriteFrames" uid="uid://bxkr146p7alkv" path="res://work_textures/rune.res" id="5_2beds"]
 [ext_resource type="PackedScene" uid="uid://crv2dmupgiyg6" path="res://pacholek.tscn" id="5_j63fv"]
 [ext_resource type="PackedScene" uid="uid://bvh6rdk877c82" path="res://snieg.tscn" id="6_1xhd1"]
+[ext_resource type="Script" path="res://AutoAnimatedSprite.gd" id="6_vtl4j"]
+
 [ext_resource type="PackedScene" uid="uid://dgrhyc33ixujt" path="res://lose_trigger.tscn" id="7_tna67"]
 [ext_resource type="PackedScene" uid="uid://mqnbbxtecbx7" path="res://win_trigger.tscn" id="8_41kty"]
 
@@ -21,6 +24,12 @@ sprite_frames = ExtResource("2_n1qxw")
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="RuneRide" type="AnimatedSprite2D" parent="."]
+position = Vector2(-310, -209)
+sprite_frames = ExtResource("5_2beds")
+animation = &"ride"
+script = ExtResource("6_vtl4j")
 
 [node name="Dragon" parent="." instance=ExtResource("3_6ft6n")]
 position = Vector2(-285, -205)
