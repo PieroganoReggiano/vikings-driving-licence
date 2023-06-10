@@ -108,7 +108,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		if $"Menu" == null:
 			show_menu()
-			
+	if Input.is_action_just_pressed("hack_next_level"):
+		next_level()
+
 func _physics_process(delta):
 	process_game_status()
 
