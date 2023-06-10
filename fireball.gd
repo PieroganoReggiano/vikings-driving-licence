@@ -1,7 +1,10 @@
-extends CharacterBody2D
+extends Area2D
+
+const DragonClass = preload("res://dragon.gd")
 
 #var velocity = Vector2.ZERO
 var time_left = 15.0
+var velocity
 
 func push(vec : Vector2):
 	velocity = vec
@@ -11,7 +14,7 @@ func push(vec : Vector2):
 	
 func _ready():
 	$"AnimatedSprite2D".play("idle")
-	
+
 func _physics_process(delta):
 	#move_and_collide(velocity)
 	position = position + velocity
@@ -20,3 +23,7 @@ func _physics_process(delta):
 		$"..".remove_child(self)
 		queue_free()
 
+func _on_body_entered(body):
+	if body is DragonClass:
+		body.shall_lose = true
+		queue_free()
