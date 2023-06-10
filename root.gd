@@ -6,6 +6,7 @@ const menu_scene = preload("res://menu.tscn")
 const pause_menu_scene = preload("res://pause_menu.tscn")
 const menu_win_scene = preload("res://menu_win.tscn")
 const menu_lose_scene = preload("res://menu_lose.tscn")
+const menu_final_scene = preload("res://menu_final.tscn")
 
 var dragon = null
 
@@ -63,6 +64,17 @@ func show_lose():
 	if music():
 		music().play_lose()
 
+func show_final():
+	if not is_any_game():
+		return
+	drop_menu()
+	var menu_created = menu_final_scene.instantiate()
+	add_child(menu_created)
+	menu_created.name = "Menu"
+	drop_level()
+	if music():
+		music().play_final()
+
 func drop_menu():
 	if get_node_or_null("Menu") != null:
 		var menu = $"Menu"
@@ -114,7 +126,7 @@ func _process(delta):
 		if get_node_or_null("Menu") == null:
 			show_menu()
 	if Input.is_action_just_pressed("hack_next_level"):
-		next_level()
+		win_level()
 
 func _physics_process(delta):
 	process_game_status()
@@ -131,8 +143,17 @@ func process_game_status():
 		get_tree().paused = true
 		show_lose()
 	elif dragon.shall_win:
+		win_level()
+
+func win_level():
+	if not is_any_game():
+		return
+	if $"Level".next_level:
 		get_tree().paused = true
 		show_win()
+	else:
+		show_final()
+	
 
 func music():
 	return get_node_or_null("MusicPlayer")
