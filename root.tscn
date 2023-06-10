@@ -199,7 +199,6 @@ process_mode = 3
 script = ExtResource("1_7520l")
 
 [node name="MusicPlayer" parent="." instance=ExtResource("2_vt1vo")]
-default_level_track = null
 
 [node name="Transition" type="CanvasLayer" parent="."]
 layer = 128
@@ -293,6 +292,7 @@ flip_h = true
 
 [node name="TransitionPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Transition")
+speed_scale = 2.0
 libraries = {
 "": SubResource("AnimationLibrary_3x341")
 }

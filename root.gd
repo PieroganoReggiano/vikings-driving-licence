@@ -125,6 +125,7 @@ func _actually_actually_load_level():
 			music().prepare_level(level_created.level_music)
 		else:
 			music().prepare_default_level()
+	music().return_to_level()
 	
 
 func next_level():
