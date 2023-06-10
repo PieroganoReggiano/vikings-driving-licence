@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy84nkuup0a84"]
+[gd_scene load_steps=4 format=3 uid="uid://dy84nkuup0a84"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_7520l"]
 [ext_resource type="PackedScene" uid="uid://djtjvvka556f" path="res://music_player.tscn" id="2_vt1vo"]
+[ext_resource type="PackedScene" uid="uid://ns3do5b8cw6k" path="res://controller.tscn" id="3_5f3ve"]
 
 [node name="Root" type="Node"]
 process_mode = 3
 script = ExtResource("1_7520l")
 
 [node name="MusicPlayer" parent="." instance=ExtResource("2_vt1vo")]
+
+[node name="Controller" parent="." instance=ExtResource("3_5f3ve")]
