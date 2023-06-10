@@ -1,10 +1,300 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy84nkuup0a84"]
+[gd_scene load_steps=9 format=3 uid="uid://dy84nkuup0a84"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_7520l"]
 [ext_resource type="PackedScene" uid="uid://djtjvvka556f" path="res://music_player.tscn" id="2_vt1vo"]
+[ext_resource type="Texture2D" uid="uid://c83y5thsfxmoq" path="res://work_textures/half_circle.png" id="3_pgm7d"]
+
+[sub_resource type="Animation" id="Animation_rp58u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2000, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2000, 160)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2000, 320)]
+}
+
+[sub_resource type="Animation" id="Animation_elkxo"]
+resource_name = "fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1567, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 160), Vector2(1567, 160)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel3:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 320), Vector2(1567, 320)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_kdrrl"]
+resource_name = "fade_out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2000, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2000, 160), Vector2(0, 160)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel3:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2000, 320), Vector2(0, 320)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_st13i"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1000, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1000, 160)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1000, 320)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3x341"]
+_data = {
+"RESET": SubResource("Animation_rp58u"),
+"fade_in": SubResource("Animation_elkxo"),
+"fade_out": SubResource("Animation_kdrrl"),
+"idle": SubResource("Animation_st13i")
+}
 
 [node name="Root" type="Node"]
 process_mode = 3
 script = ExtResource("1_7520l")
 
 [node name="MusicPlayer" parent="." instance=ExtResource("2_vt1vo")]
+default_level_track = null
+
+[node name="Transition" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="Panel" type="ColorRect" parent="Transition"]
+offset_left = -2000.0
+offset_right = -720.0
+offset_bottom = 320.0
+grow_horizontal = 2
+color = Color(0.6, 0.760784, 0.858824, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Transition/Panel"]
+modulate = Color(0.6, 0.760784, 0.858824, 1)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 80.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_pgm7d")
+
+[node name="TextureRect2" type="TextureRect" parent="Transition/Panel"]
+modulate = Color(0.6, 0.760784, 0.858824, 1)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -80.0
+grow_vertical = 2
+texture = ExtResource("3_pgm7d")
+flip_h = true
+
+[node name="Panel2" type="ColorRect" parent="Transition"]
+offset_left = -2000.0
+offset_top = 160.0
+offset_right = -720.0
+offset_bottom = 480.0
+color = Color(0.364706, 0.545098, 0.701961, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Transition/Panel2"]
+modulate = Color(0.364706, 0.545098, 0.701961, 1)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 80.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_pgm7d")
+
+[node name="TextureRect2" type="TextureRect" parent="Transition/Panel2"]
+modulate = Color(0.364706, 0.545098, 0.701961, 1)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -80.0
+grow_vertical = 2
+texture = ExtResource("3_pgm7d")
+flip_h = true
+
+[node name="Panel3" type="ColorRect" parent="Transition"]
+offset_left = -2000.0
+offset_top = 320.0
+offset_right = -720.0
+offset_bottom = 640.0
+color = Color(0.301961, 0.415686, 0.580392, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Transition/Panel3"]
+modulate = Color(0.301961, 0.415686, 0.580392, 1)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 80.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_pgm7d")
+
+[node name="TextureRect2" type="TextureRect" parent="Transition/Panel3"]
+modulate = Color(0.301961, 0.415686, 0.580392, 1)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -80.0
+grow_vertical = 2
+texture = ExtResource("3_pgm7d")
+flip_h = true
+
+[node name="TransitionPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Transition")
+libraries = {
+"": SubResource("AnimationLibrary_3x341")
+}
+
+[connection signal="animation_finished" from="TransitionPlayer" to="." method="_actually_load_level"]

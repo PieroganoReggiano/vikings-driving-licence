@@ -17,7 +17,7 @@ func restart():
 	drop_menu()
 	
 func restart_level():
-	load_level(current_level_resource)
+	load_level(current_level_resource, false)
 	drop_menu()
 
 func play():
@@ -94,7 +94,26 @@ func drop_level():
 		remove_child(level)
 		level.queue_free()
 
-func load_level(level):
+var level_to_load: PackedScene
+
+func load_level(level, animate=true):
+	if $TransitionPlayer.current_animation == "fade_out": return
+	level_to_load = level
+	if animate:
+		$TransitionPlayer.play("fade_out")
+	else:
+		_actually_actually_load_level()
+
+func _actually_load_level(anim_name):
+	if anim_name != "fade_out": return
+	$TransitionPlayer.play("fade_in")
+
+	_actually_actually_load_level()
+	
+
+func _actually_actually_load_level():
+	drop_menu()
+	var level = level_to_load
 	drop_level()
 	var level_created = level.instantiate()
 	add_child(level_created)
@@ -106,6 +125,7 @@ func load_level(level):
 			music().prepare_level(level_created.level_music)
 		else:
 			music().prepare_default_level()
+	
 
 func next_level():
 	if not is_any_game():
@@ -116,7 +136,6 @@ func next_level():
 		show_menu()
 	else:
 		load_level(next_level)
-		drop_menu()
 
 func _ready():
 	show_menu()
