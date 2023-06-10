@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://crv2dmupgiyg6"]
+[gd_scene load_steps=9 format=3 uid="uid://crv2dmupgiyg6"]
 
 [ext_resource type="Script" path="res://pacholek.gd" id="1_g6fki"]
 [ext_resource type="Texture2D" uid="uid://byv7i8jiiwfcy" path="res://work_textures/cone_up.tres" id="2_2au0p"]
@@ -8,6 +8,28 @@
 radius = 12.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bj78v"]
+
+[sub_resource type="Gradient" id="Gradient_2r6f0"]
+colors = PackedColorArray(0.3, 0.3, 0.3, 1, 0.67, 0.67, 0.67, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cgnp1"]
+gradient = SubResource("Gradient_2r6f0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mq6up"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+spread = 75.0
+initial_velocity_min = 30.0
+initial_velocity_max = 120.0
+angular_velocity_min = -300.0
+angular_velocity_max = 300.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 5.0
+damping_max = 15.0
+scale_min = 2.0
+scale_max = 6.0
+color_ramp = SubResource("GradientTexture1D_cgnp1")
 
 [node name="pacholek" type="RigidBody2D"]
 collision_layer = 0
@@ -31,5 +53,13 @@ texture = ExtResource("3_a0odv")
 position = Vector2(-10, 0)
 rotation = 0.785397
 shape = SubResource("RectangleShape2D_bj78v")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 23
+process_material = SubResource("ParticleProcessMaterial_mq6up")
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
 
 [connection signal="body_entered" from="sprite_up/Area2D" to="." method="_on_area_2d_body_entered"]
