@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+const DragonClass = preload("res://dragon.gd")
+
 func _on_area_2d_body_entered(body):
 	$sprite_up.visible = false
 	rotation = (body.position - position).angle()
@@ -9,3 +11,6 @@ func _on_area_2d_body_entered(body):
 	set_collision_mask_value(2, true)
 	$sprite_down.visible = true
 	$GPUParticles2D.emitting = true
+	
+	if body is DragonClass:
+		body.shall_lose = true
