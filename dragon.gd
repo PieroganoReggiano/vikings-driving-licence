@@ -31,40 +31,37 @@ func set_animation_walk(speed:float):
 	sprite.speed_scale = max(1.0, speed / 100.0)
 
 func _physics_process(delta):
-	move_vector = (
-		Vector2.UP * Input.get_axis("backward","forward") +
-		Vector2.RIGHT * Input.get_axis("left","right")
-		)
-	if move_vector.y > 0:
-		move_vector.x = -move_vector.x
+	move_vector = Vector2(Input.get_axis("forward", "backward"), Input.get_axis("left", "right"))
+	if move_vector.x > 0:
+		move_vector.y = -move_vector.y
 	
 	if Input.is_action_just_pressed("fire"):
 		do_fire = true
 	
 	var acceleration_force = Vector2.ZERO
 	
-	if move_vector.y < 0.0:
-		acceleration_force += Vector2(0.0, forward_speed)
+	if move_vector.x < 0.0:
+		acceleration_force += Vector2(forward_speed, 0.0)
 	
-	if move_vector.y > 0.0:
-		acceleration_force += Vector2(0.0, -backward_speed)
-		
+	if move_vector.x > 0.0:
+		acceleration_force += Vector2(-backward_speed, 0.0)
+	
 	if move_vector != Vector2.ZERO or linear_velocity.length() > 20.0:
 		var walk_animation_speed = linear_velocity.length()
 		set_animation_walk(walk_animation_speed)
 	else:
 		set_animation_idle()
-		
-	acceleration_force = acceleration_force.rotated(rotation)
+	
+#	acceleration_force = acceleration_force.rotated(rotation)
 	
 	if (linear_velocity != Vector2.ZERO):
-		acceleration_force += linear_velocity * default_resistance
+		acceleration_force -= linear_velocity * default_resistance
 		var sqrt_velocity = linear_velocity / sqrt(linear_velocity.length())
 		acceleration_force += sqrt_velocity * sqrt_resistance
 	
-	apply_central_force(-acceleration_force)
+	apply_central_force(acceleration_force)
 	
-	set_angular_velocity(turn_speed * move_vector.x * delta)
+	set_angular_velocity(turn_speed * move_vector.y * delta)
 	
 	handle_fire(delta)
 	
