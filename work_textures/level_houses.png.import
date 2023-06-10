@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn0x40fjjiuuo"
-path="res://.godot/imported/rune.png-255803ea29ecd9c566c69aab24b77a61.ctex"
+uid="uid://docxar1q2erxl"
+path="res://.godot/imported/level_houses.png-3bdf768fb76dd30bc93cf4aa667a1238.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://work_textures/rune.png"
-dest_files=["res://.godot/imported/rune.png-255803ea29ecd9c566c69aab24b77a61.ctex"]
+source_file="res://work_textures/level_houses.png"
+dest_files=["res://.godot/imported/level_houses.png-3bdf768fb76dd30bc93cf4aa667a1238.ctex"]
 
 [params]
 
