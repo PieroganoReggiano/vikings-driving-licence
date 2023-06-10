@@ -21,6 +21,9 @@ func is_turn_right():
 func is_turn_left():
 	return Input.is_action_pressed("left")
 	
+func is_firing():
+	return Input.is_action_just_pressed("fire")
+	
 func get_turning_axis():
 	return Input.get_axis("left","right")
 
@@ -32,6 +35,10 @@ func _process(delta):
 		Vector2.UP * get_forward_backward_axis() +
 		Vector2.RIGHT * get_turning_axis()
 	)
+	
+	if is_firing():
+		control.fire_fireball()
+	
 	#print(control.move_vector)
 
 func _ready():
