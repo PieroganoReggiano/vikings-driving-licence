@@ -64,5 +64,5 @@ lifetime = 0.2
 one_shot = true
 explosiveness = 1.0
 
-[connection signal="area_entered" from="sprite_up/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="sprite_up/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="sprite_up/Area2D" to="." method="_on_area_2d_body_entered"]

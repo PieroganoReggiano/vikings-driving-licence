@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwg3whgjuqllt"]
+
+[ext_resource type="SpriteFrames" uid="uid://cfs7p3glsj3ci" path="res://work_textures/standing_enemy.res" id="1_yxudq"]
+[ext_resource type="Script" path="res://levels/enemy_standing.gd" id="2_vpth4"]
+[ext_resource type="PackedScene" uid="uid://dqb5dd1uglfe0" path="res://enemy_fireball.tscn" id="3_ip14s"]
+[ext_resource type="PackedScene" uid="uid://nsw5e4p6nu7e" path="res://explosion.tscn" id="4_2ds0i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7tdt7"]
+height = 50.0
+
+[node name="enemy_standing" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_yxudq")
+animation = &"attack"
+script = ExtResource("2_vpth4")
+fireball_scene = ExtResource("3_ip14s")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_7tdt7")
+
+[node name="explosion" parent="." instance=ExtResource("4_2ds0i")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

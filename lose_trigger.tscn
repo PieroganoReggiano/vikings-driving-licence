@@ -6,6 +6,8 @@
 size = Vector2(100, 100)
 
 [node name="LoseTrigger" type="Area2D"]
+collision_layer = 32
+collision_mask = 32
 script = ExtResource("1_k0vgh")
 
 [node name="Area" type="CollisionShape2D" parent="."]
