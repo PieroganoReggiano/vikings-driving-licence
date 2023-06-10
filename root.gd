@@ -49,7 +49,7 @@ func show_win():
 	var menu_created = menu_win_scene.instantiate()
 	add_child(menu_created)
 	menu_created.name = "Menu"
-	get_tree().paused = true
+#	get_tree().paused = true
 	if music():
 		music().play_win()
 
@@ -60,7 +60,7 @@ func show_lose():
 	var menu_created = menu_lose_scene.instantiate()
 	add_child(menu_created)
 	menu_created.name = "Menu"
-	get_tree().paused = true
+#	get_tree().paused = true
 	if music():
 		music().play_lose()
 
@@ -132,7 +132,7 @@ func _physics_process(delta):
 	process_game_status()
 
 func process_game_status():
-	if not is_any_game() or get_tree().paused:
+	if not is_any_game() or get_node_or_null("/root/Root/Menu"):
 		return
 #	if $"Controller".control == null:
 #		return
@@ -140,7 +140,7 @@ func process_game_status():
 	if dragon == null:
 		return
 	if dragon.shall_lose:
-		get_tree().paused = true
+#		get_tree().paused = true
 		show_lose()
 	elif dragon.shall_win:
 		win_level()
