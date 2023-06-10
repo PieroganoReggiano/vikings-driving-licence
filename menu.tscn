@@ -17,7 +17,8 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 
 [sub_resource type="InputEventKey" id="InputEventKey_1il5r"]
 device = -1
-keycode = 4194309
+keycode = 32
+unicode = 32
 
 [sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_awvwf"]
 pressed = true

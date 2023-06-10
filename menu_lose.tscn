@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://xlaifhutvjrb"]
+[gd_scene load_steps=12 format=3 uid="uid://xlaifhutvjrb"]
 
 [ext_resource type="Script" path="res://menu_lose.gd" id="1_n3b7p"]
 [ext_resource type="Texture2D" uid="uid://crl404jsbu3nd" path="res://work_textures/restart_paper.png" id="2_etvwa"]
@@ -16,8 +16,13 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 [sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_prlhm"]
 pressed = true
 
+[sub_resource type="InputEventKey" id="InputEventKey_t2q5k"]
+device = -1
+keycode = 82
+unicode = 114
+
 [sub_resource type="Shortcut" id="Shortcut_aw05l"]
-events = [SubResource("InputEventJoypadButton_prlhm")]
+events = [SubResource("InputEventJoypadButton_prlhm"), SubResource("InputEventKey_t2q5k")]
 
 [sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_6it4k"]
 button_index = 1
