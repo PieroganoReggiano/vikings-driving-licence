@@ -19,10 +19,10 @@ func play():
 	if $"Level" == null:
 		load_level(level01)
 	drop_menu()
-		
+
 func quit():
 	get_tree().quit()
-	
+
 func show_menu():
 	drop_menu()
 	var is_this_pause_menu = is_any_game()
@@ -55,7 +55,7 @@ func show_lose():
 	var menu_created = menu_lose_scene.instantiate()
 	add_child(menu_created)
 	menu_created.name = "Menu"
-	get_tree().paused = true
+#	get_tree().paused = true
 	if music():
 		music().play_lose()
 
@@ -68,10 +68,10 @@ func drop_menu():
 	if music():
 		if is_any_game():
 			music().play_level()
-		
+
 func is_any_game():
 	return $"Level" != null
-	
+
 func drop_level():
 	if $"Controller":
 		$"Controller".control = null
@@ -115,7 +115,7 @@ func _physics_process(delta):
 	process_game_status()
 
 func process_game_status():
-	if not is_any_game() or get_tree().paused:
+	if not is_any_game() or get_node_or_null("/root/Root/Menu"):
 		return
 	if $"Controller".control == null:
 		return
