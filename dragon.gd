@@ -8,15 +8,15 @@ var fireball_wait = -1
 @export var sqrt_resistance : float = 9000.0
 @export var forward_speed : float = 420000.0
 @export var backward_speed: float = 160000.0
-@export var turn_speed: float = 100.0
+@export var turn_speed: float = 200.0
 @export var fireball_scene : Resource
 @export var fireball_cooldown : float = 1.0
 
 var shall_win = false
 var shall_lose = false
 
-func set_vector(vec:Vector2):
-	move_vector = vec
+func _ready():
+	get_node("/root/Root").dragon = self
 
 func set_animation_idle():
 	var sprite = $"Sprite"
@@ -31,6 +31,16 @@ func set_animation_walk(speed:float):
 	sprite.speed_scale = max(1.0, speed / 100.0)
 
 func _physics_process(delta):
+	move_vector = (
+		Vector2.UP * Input.get_axis("backward","forward") +
+		Vector2.RIGHT * Input.get_axis("left","right")
+		)
+	if move_vector.y > 0:
+		move_vector.x = -move_vector.x
+	
+	if Input.is_action_just_pressed("fire"):
+		do_fire = true
+	
 	var acceleration_force = Vector2.ZERO
 	
 	if move_vector.y < 0.0:

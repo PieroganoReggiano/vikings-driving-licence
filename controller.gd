@@ -30,7 +30,7 @@ func get_turning_axis():
 func _process(delta):
 	if (control == null):
 		return
-		
+	
 	control.set_vector(
 		Vector2.UP * get_forward_backward_axis() +
 		Vector2.RIGHT * get_turning_axis()

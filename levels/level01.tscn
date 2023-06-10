@@ -1,14 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://duh5my8ov1o5x"]
+[gd_scene load_steps=11 format=3 uid="uid://duh5my8ov1o5x"]
 
 [ext_resource type="PackedScene" uid="uid://b2ugbkp33cm32" path="res://dragon.tscn" id="1_8qery"]
 [ext_resource type="Script" path="res://level.gd" id="1_csc6m"]
 [ext_resource type="Texture2D" uid="uid://bevwavhr888jh" path="res://work_textures/bg1.png" id="1_tihsa"]
-[ext_resource type="PackedScene" uid="uid://bq448yqb2ttax" path="res://levels/level02.tscn" id="2_3m6tp"]
 [ext_resource type="PackedScene" uid="uid://ns3do5b8cw6k" path="res://controller.tscn" id="2_aadfa"]
 [ext_resource type="PackedScene" uid="uid://crv2dmupgiyg6" path="res://pacholek.tscn" id="3_8yruf"]
-[ext_resource type="PackedScene" uid="uid://bvh6rdk877c82" path="res://snieg.tscn" id="5_moa1m"]
-[ext_resource type="PackedScene" path="res://win_trigger.tscn" id="7_oq5aa"]
-[ext_resource type="PackedScene" path="res://lose_trigger.tscn" id="8_0hhg5"]
+[ext_resource type="PackedScene" path="res://snieg.tscn" id="5_moa1m"]
+[ext_resource type="PackedScene" uid="uid://mqnbbxtecbx7" path="res://win_trigger.tscn" id="7_oq5aa"]
+[ext_resource type="PackedScene" uid="uid://dgrhyc33ixujt" path="res://lose_trigger.tscn" id="8_0hhg5"]
 
 [sub_resource type="Gradient" id="Gradient_yvhwv"]
 offsets = PackedFloat32Array(1)
@@ -20,7 +19,6 @@ gradient = SubResource("Gradient_yvhwv")
 [node name="Level" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_csc6m")
-next_level = ExtResource("2_3m6tp")
 
 [node name="backfill" type="Sprite2D" parent="."]
 position = Vector2(-5.00006, 4.49998)
