@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 var move_vector : Vector2 = Vector2.ZERO
-var do_fire = false
+var requesting_fire = false
 var fireball_wait = 0.5
 
 @export var default_resistance : float = 600.0
@@ -17,40 +17,71 @@ var shall_lose = false
 
 func _ready():
 	get_node("/root/Root").dragon = self
+	$Sprite.animation = "idle"
 
-func set_animation_idle():
+func anim_idle():
 	var sprite = $"Sprite"
+	sprite.scale.x = 1.0
 	if sprite.animation != "idle":
 		sprite.play("idle")
 	sprite.speed_scale = 1.0
 	
-func set_animation_walk(speed:float):
+func anim_walk(speed:float):
 	var sprite = $"Sprite"
+	sprite.scale.x = 1.0
 	if sprite.animation != "walk":
 		sprite.play("walk")
 	sprite.speed_scale = max(1.0, speed / 100.0)
+	
+func anim_walk_turn(way:float, speed:float):
+	var sprite = $"Sprite"
+	if way * sprite.scale.x < 0.0 or sprite.animation != "walk_after_turn":
+		sprite.play("walk_after_turn")
+	sprite.scale.x = sign(way)
+	sprite.speed_scale = max(1.0, speed / 100.0)
+	
+	
+func anim_turn(way:float):
+	var sprite = $"Sprite"
+	if way * sprite.scale.x < 0.0 or sprite.animation != "turn_loop":
+		sprite.play("turn_loop")
+	sprite.scale.x = sign(way)
+	sprite.speed_scale = 1.0
+	
+func anim_fire():
+	var sprite = $"Sprite"
+	sprite.scale.x = 1.0
+	if sprite.animation != "attack_loop":
+		sprite.play("attack_loop")
+	sprite.speed_scale = 1.0
 
 func _physics_process(delta):
-	move_vector = Vector2(Input.get_axis("forward", "backward"), Input.get_axis("left", "right"))
+	handle_cooldown(delta)
+	handle_movement_and_physics(delta)
+	handle_animation(delta)
+
+
+func handle_movement_and_physics(_delta):
+	var acceleration_force = Vector2.ZERO
+	move_vector = Vector2.ZERO
+	
+		
+	if not $Sprite.animation == "attack_loop":
+		move_vector = Vector2(Input.get_axis("forward", "backward"), Input.get_axis("left", "right"))
+		if Input.is_action_just_pressed("fire") and fireball_wait <= 0.0:
+			requesting_fire = true
+		
+		
 	if move_vector.x > 0:
 		move_vector.y = -move_vector.y
 	
-	if Input.is_action_just_pressed("fire"):
-		do_fire = true
 	
-	var acceleration_force = Vector2.ZERO
 	
 	if move_vector.x < 0.0:
 		acceleration_force += Vector2(forward_speed, 0.0)
 	
 	if move_vector.x > 0.0:
 		acceleration_force += Vector2(-backward_speed, 0.0)
-	
-	if move_vector != Vector2.ZERO or linear_velocity.length() > 20.0:
-		var walk_animation_speed = linear_velocity.length()
-		set_animation_walk(walk_animation_speed)
-	else:
-		set_animation_idle()
 	
 	acceleration_force = acceleration_force.rotated(rotation)
 	
@@ -63,24 +94,35 @@ func _physics_process(delta):
 	
 	apply_central_force(acceleration_force)
 	
-	set_angular_velocity(turn_speed * move_vector.y * delta)
+	set_angular_velocity(turn_speed * move_vector.y * 1.0/60.0)
+
+func handle_animation(_delta):
+	if $Sprite.animation == "attack_loop":
+		return # whe fire, cannot do anything else
+	var walk_animation_speed = linear_velocity.length() * 0.4
+	if requesting_fire and fireball_wait <= 0.0:
+		anim_fire()
+		requesting_fire = false
+	elif move_vector.x != 0.0 or linear_velocity.length() > 40.0:
+		if move_vector.y != 0.0 and linear_velocity.length() < 350.0:
+			anim_walk_turn(move_vector.y, walk_animation_speed)
+		else:
+			anim_walk(walk_animation_speed)
+	elif move_vector.y != 0.0:
+		anim_turn(move_vector.y)
+	else:
+		anim_idle()
 	
-	handle_fire(delta)
-	
-	#rotation += (turn_speed * move_vector.x * delta)
 
 func get_direction_vector():
 	return Vector2(cos(rotation), sin(rotation))
 
-func handle_fire(delta):
+func handle_cooldown(delta):
 	fireball_wait -= delta
 	if fireball_wait < 0:
 		fireball_wait = -1
-	if not do_fire:
-		return
-	do_fire = false
-	if fireball_wait > 0.0:
-		return
+
+func do_fire():
 	var direction = get_direction_vector()
 	var fireball = fireball_scene.instantiate()
 	fireball.position = position + direction * 48
@@ -88,3 +130,13 @@ func handle_fire(delta):
 	fireball.push(direction * 6 + linear_velocity/60)
 	fireball_wait = fireball_cooldown
 	
+
+
+func _on_sprite_frame_changed():
+	if $Sprite.animation == "attack_loop" and $Sprite.frame == 4:
+		do_fire()
+
+
+func _on_sprite_animation_looped():
+	if $Sprite.animation == "attack_loop":
+		$Sprite.play("idle")

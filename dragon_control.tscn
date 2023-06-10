@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfpf50fet2656"]
-
-[ext_resource type="Script" path="res://dragon_control.gd" id="1_qsm2t"]
-
-[node name="DragonControl" type="Node"]
-script = ExtResource("1_qsm2t")

@@ -65,4 +65,7 @@ func restore_level_music():
 		prepared_level_music = null
 		prepared_level_music_time = 0.0
 		is_playing_level_music = true
-	
+
+func _process(_delta):
+	if stream != null and not playing:
+		play()
