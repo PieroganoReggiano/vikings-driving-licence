@@ -15,6 +15,7 @@ func fire_fireball():
 func _process(delta):
 	if (get_dragon() == null):
 		print_debug("error: dragon controller does not have dragon")
+		
 	get_dragon().set_vector(move_vector)
 	if do_fire:
 		get_dragon().do_fire = true

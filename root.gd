@@ -7,7 +7,7 @@ const pause_menu_scene = preload("res://pause_menu.tscn")
 const menu_win_scene = preload("res://menu_win.tscn")
 const menu_lose_scene = preload("res://menu_lose.tscn")
 
-const DragonClass = preload("res://dragon.gd")
+var dragon = null
 
 var current_level_resource : Resource
 
@@ -26,7 +26,7 @@ func play():
 
 func quit():
 	get_tree().quit()
-
+	
 func show_menu():
 	drop_menu()
 	var is_this_pause_menu = is_any_game()
@@ -51,7 +51,7 @@ func show_win():
 	get_tree().paused = true
 	if music():
 		music().play_win()
-		
+
 func show_lose():
 	if not is_any_game():
 		return
@@ -59,7 +59,7 @@ func show_lose():
 	var menu_created = menu_lose_scene.instantiate()
 	add_child(menu_created)
 	menu_created.name = "Menu"
-#	get_tree().paused = true
+	get_tree().paused = true
 	if music():
 		music().play_lose()
 
@@ -77,9 +77,6 @@ func is_any_game():
 	return $"Level" != null
 
 func drop_level():
-	if $"Controller":
-		$"Controller".control = null
-		$"Controller".camera = null
 	if is_any_game():
 		var level = $"Level"
 		remove_child(level)
@@ -92,9 +89,6 @@ func load_level(level):
 	level_created.name = "Level"
 	current_level_resource = level
 	get_tree().paused = false
-	if $"Controller":
-		$"Controller".control = level_created.get_node("Dragon/DragonControl")
-		$"Controller".camera = level_created.get_node("Camera2D")
 
 func next_level():
 	if not is_any_game():
@@ -119,12 +113,12 @@ func _physics_process(delta):
 	process_game_status()
 
 func process_game_status():
-	if not is_any_game() or get_node_or_null("/root/Root/Menu"):
+	if not is_any_game() or get_tree().paused:
 		return
-	if $"Controller".control == null:
-		return
-	var dragon = $"Controller".control.get_node("..")
-	if not dragon is DragonClass:
+#	if $"Controller".control == null:
+#		return
+#	var dragon = $"Controller".control.get_node("..")
+	if dragon == null:
 		return
 	if dragon.shall_lose:
 		get_tree().paused = true

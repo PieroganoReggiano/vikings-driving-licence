@@ -7,16 +7,16 @@ var fireball_wait = 0.5
 @export var default_resistance : float = 600.0
 @export var sqrt_resistance : float = 9000.0
 @export var forward_speed : float = 420000.0
-@export var backward_speed: float = 160000.0
-@export var turn_speed: float = 100.0
+@export var backward_speed: float = 600000.0
+@export var turn_speed: float = 200.0
 @export var fireball_scene : Resource
 @export var fireball_cooldown : float = 1.0
 
 var shall_win = false
 var shall_lose = false
 
-func set_vector(vec:Vector2):
-	move_vector = vec
+func _ready():
+	get_node("/root/Root").dragon = self
 
 func set_animation_idle():
 	var sprite = $"Sprite"
@@ -31,35 +31,43 @@ func set_animation_walk(speed:float):
 	sprite.speed_scale = max(1.0, speed / 100.0)
 
 func _physics_process(delta):
+	move_vector = Vector2(Input.get_axis("forward", "backward"), Input.get_axis("left", "right"))
+	if move_vector.x > 0:
+		move_vector.y = -move_vector.y
+	
+	if Input.is_action_just_pressed("fire"):
+		do_fire = true
+	
 	var acceleration_force = Vector2.ZERO
 	
-	if move_vector.y < 0.0:
-		acceleration_force += Vector2(0.0, forward_speed)
+	if move_vector.x < 0.0:
+		acceleration_force += Vector2(forward_speed, 0.0)
 	
-	if move_vector.y > 0.0:
-		acceleration_force += Vector2(0.0, -backward_speed)
-		
+	if move_vector.x > 0.0:
+		acceleration_force += Vector2(-backward_speed, 0.0)
+	
 	if move_vector != Vector2.ZERO or linear_velocity.length() > 20.0:
 		var walk_animation_speed = linear_velocity.length()
 		set_animation_walk(walk_animation_speed)
 	else:
 		set_animation_idle()
-		
+	
 	acceleration_force = acceleration_force.rotated(rotation)
 	
+	linear_velocity = 0.8 * linear_velocity + 0.2 * linear_velocity.rotated(rotation-linear_velocity.angle())
+	
 	if (linear_velocity != Vector2.ZERO):
-		acceleration_force += linear_velocity * default_resistance
+		acceleration_force -= linear_velocity * default_resistance
 		var sqrt_velocity = linear_velocity / sqrt(linear_velocity.length())
-		acceleration_force += sqrt_velocity * sqrt_resistance
+		acceleration_force -= sqrt_velocity * sqrt_resistance
 	
-	apply_central_force(-acceleration_force)
+	apply_central_force(acceleration_force)
 	
-	set_angular_velocity(turn_speed * move_vector.x * delta)
+	set_angular_velocity(turn_speed * move_vector.y * delta)
 	
 	handle_fire(delta)
 	
 	#rotation += (turn_speed * move_vector.x * delta)
-
 
 func get_direction_vector():
 	return Vector2(sin(rotation), -cos(rotation))
