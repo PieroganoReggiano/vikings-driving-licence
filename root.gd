@@ -1,13 +1,12 @@
 extends Node
 
-const default_level = preload("res://default_level.tscn")
 const level01 = preload("res://levels/level01.tscn")
 
 const menu_scene = preload("res://menu.tscn")
 const pause_menu_scene = preload("res://pause_menu.tscn")
 
 func restart():
-	load_level(default_level)
+	load_level(level01)
 	drop_menu()
 
 func play():
@@ -48,6 +47,9 @@ func is_any_game():
 	return $"Level" != null
 	
 func drop_level():
+	if $"Controller":
+		$"Controller".control = null
+		$"Controller".camera = null
 	if is_any_game():
 		var level = $"Level"
 		remove_child(level)
@@ -59,6 +61,9 @@ func load_level(level):
 	add_child(level_created)
 	level_created.name = "Level"
 	get_tree().paused = false
+	if $"Controller":
+		$"Controller".control = level_created.get_node("Dragon/DragonControl")
+		$"Controller".camera = level_created.get_node("Camera2D")
 
 
 func _ready():
