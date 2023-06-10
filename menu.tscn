@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dsgl10vur0y5c" path="res://work_textures/menu_paper.png" id="2_77740"]
 [ext_resource type="Texture2D" uid="uid://cindowwyuxseg" path="res://work_textures/menu_shadow.png" id="2_qol7b"]
 [ext_resource type="FontFile" uid="uid://cqpi3lwer7438" path="res://DungeonFont.ttf" id="3_lysej"]
+
 [ext_resource type="Texture2D" uid="uid://de7cwypfp47m3" path="res://work_textures/dragon_portrait.png" id="4_wunfg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_clswj"]
