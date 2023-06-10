@@ -16,4 +16,5 @@ func _on_button_restart_pressed():
 	
 
 func _on_button_quit_pressed():
-	$"..".quit()
+	$"..".drop_level()
+	$"..".show_menu()

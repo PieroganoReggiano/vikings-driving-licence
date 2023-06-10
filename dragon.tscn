@@ -17,6 +17,7 @@ fireball_scene = ExtResource("2_itvfq")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("3_s1qc3")
 animation = &"walk"
+offset = Vector2(3, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_6770u")
