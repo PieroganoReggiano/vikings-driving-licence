@@ -101,6 +101,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_clswj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qu8cj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qs4je")
 shortcut = SubResource("Shortcut_iotc8")
+shortcut_in_tooltip = false
 text = "Play!"
 
 [node name="ButtonQuit" type="Button" parent="."]
@@ -119,6 +120,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_lfjey")
 theme_override_styles/hover = SubResource("StyleBoxFlat_myi2s")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6e1ib")
 shortcut = SubResource("Shortcut_kgbe4")
+shortcut_in_tooltip = false
 text = "Give up!"
 
 [connection signal="pressed" from="MenuPaper/ButtonPlay" to="." method="_on_button_play_pressed"]
