@@ -51,6 +51,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_clswj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qu8cj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qs4je")
 shortcut = SubResource("Shortcut_ftcnl")
+shortcut_in_tooltip = false
 text = "Next!"
 
 [connection signal="pressed" from="TextureRect/ButtonNext" to="." method="_on_button_next_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cakjv3ndh1j4g"]
+[gd_scene load_steps=6 format=3 uid="uid://42vtrco41cng"]
 
 [ext_resource type="Script" path="res://pause_menu.gd" id="1_shy4p"]
 [ext_resource type="Texture2D" uid="uid://byxrxl05710y6" path="res://work_textures/pause_background.png" id="3_d0l4b"]
@@ -37,6 +37,7 @@ layout_mode = 0
 offset_top = 15.0
 offset_right = 64.0
 offset_bottom = 79.0
+shortcut_in_tooltip = false
 texture_normal = ExtResource("3_ffmcw")
 
 [node name="ButtonRestart" type="TextureButton" parent="TextureRect"]
@@ -45,6 +46,7 @@ offset_left = 64.0
 offset_top = 15.0
 offset_right = 128.0
 offset_bottom = 79.0
+shortcut_in_tooltip = false
 texture_normal = ExtResource("4_wcvl5")
 
 [node name="ButtonQuit" type="TextureButton" parent="TextureRect"]
@@ -53,6 +55,7 @@ offset_left = 128.0
 offset_top = 15.0
 offset_right = 192.0
 offset_bottom = 79.0
+shortcut_in_tooltip = false
 texture_normal = ExtResource("5_7ydfv")
 
 [connection signal="pressed" from="TextureRect/ButtonResume" to="." method="_on_button_resume_pressed"]

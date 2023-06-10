@@ -54,6 +54,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_clswj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qu8cj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qs4je")
 shortcut = SubResource("Shortcut_aw05l")
+shortcut_in_tooltip = false
 text = "Restart "
 
 [node name="ButtonMenu" type="Button" parent="."]
@@ -68,6 +69,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_clswj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qu8cj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qs4je")
 shortcut = SubResource("Shortcut_umec5")
+shortcut_in_tooltip = false
 text = "Back to main menu..."
 
 [connection signal="pressed" from="TextureRect/ButtonRestart" to="." method="_on_button_restart_pressed"]
