@@ -4,6 +4,12 @@ const level01 = preload("res://levels/level01.tscn")
 
 const menu_scene = preload("res://menu.tscn")
 const pause_menu_scene = preload("res://pause_menu.tscn")
+const menu_win_scene = preload("res://menu_win.tscn")
+const menu_lose_scene = preload("res://menu_lose.tscn")
+
+const DragonClass = preload("res://dragon.gd")
+
+var current_level_resource : Resource
 
 func restart():
 	load_level(level01)
@@ -31,7 +37,27 @@ func show_menu():
 		else:
 			music().play_menu()
 
-
+func show_win():
+	if not is_any_game():
+		return
+	drop_menu()
+	var menu_created = menu_win_scene.instantiate()
+	add_child(menu_created)
+	menu_created.name = "Menu"
+	get_tree().paused = true
+	if music():
+		music().play_win()
+		
+func show_lose():
+	if not is_any_game():
+		return
+	drop_menu()
+	var menu_created = menu_lose_scene.instantiate()
+	add_child(menu_created)
+	menu_created.name = "Menu"
+	get_tree().paused = true
+	if music():
+		music().play_lose()
 
 func drop_menu():
 	if $"Menu" != null:
@@ -60,11 +86,22 @@ func load_level(level):
 	var level_created = level.instantiate()
 	add_child(level_created)
 	level_created.name = "Level"
+	current_level_resource = level
 	get_tree().paused = false
 	if $"Controller":
 		$"Controller".control = level_created.get_node("Dragon/DragonControl")
 		$"Controller".camera = level_created.get_node("Camera2D")
 
+func next_level():
+	if not is_any_game():
+		return
+	var next_level = $"Level".next_level
+	if next_level == null:
+		drop_level()
+		show_menu()
+	else:
+		load_level(next_level)
+		drop_menu()
 
 func _ready():
 	show_menu()
@@ -73,6 +110,24 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		if $"Menu" == null:
 			show_menu()
+			
+func _physics_process(delta):
+	process_game_status()
+
+func process_game_status():
+	if not is_any_game() or get_tree().paused:
+		return
+	if $"Controller".control == null:
+		return
+	var dragon = $"Controller".control.get_node("..")
+	if not dragon is DragonClass:
+		return
+	if dragon.shall_lose:
+		get_tree().paused = true
+		show_lose()
+	elif dragon.shall_win:
+		get_tree().paused = true
+		show_win()
 
 func music():
 	return $"MusicPlayer"

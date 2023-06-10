@@ -1,12 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://djtjvvka556f"]
+[gd_scene load_steps=8 format=3 uid="uid://djtjvvka556f"]
 
 [ext_resource type="Script" path="res://music_player.gd" id="1_dnnvr"]
-[ext_resource type="AudioStream" uid="uid://2sll01ugomeq" path="res://SOUNDTRACK/Music/Main menu theme.ogg" id="2_5rdna"]
-[ext_resource type="AudioStream" uid="uid://do4lfvrscdd8n" path="res://SOUNDTRACK/Music/Level 1 theme.ogg" id="3_aibji"]
-[ext_resource type="AudioStream" uid="uid://1ho0u1edoeuo" path="res://SOUNDTRACK/Music/Pause menu theme.ogg" id="3_okut3"]
+[ext_resource type="AudioStream" uid="uid://d0wh4qkq3sjro" path="res://SOUNDTRACK/Music/Main menu theme.ogg" id="2_5rdna"]
+[ext_resource type="AudioStream" uid="uid://cp2gkko6ivtro" path="res://SOUNDTRACK/Music/Level 1 theme.ogg" id="3_aibji"]
+[ext_resource type="AudioStream" uid="uid://wkl5bq5melgn" path="res://SOUNDTRACK/Music/Pause menu theme.ogg" id="3_okut3"]
+[ext_resource type="AudioStream" uid="uid://waddrljua8io" path="res://SOUNDTRACK/Music/Level theme edm cos ala.ogg" id="5_eli5w"]
+[ext_resource type="AudioStream" uid="uid://bm2cnwa3v2uvt" path="res://SOUNDTRACK/Music/Level theme metal.ogg" id="6_fejag"]
+[ext_resource type="AudioStream" uid="uid://brglfdpcgcrc6" path="res://SOUNDTRACK/Music/sąsiedzi do end levelu XDDDD.ogg" id="7_ag488"]
 
 [node name="MusicPlayer" type="AudioStreamPlayer"]
 script = ExtResource("1_dnnvr")
 menu_track = ExtResource("2_5rdna")
 pause_menu_track = ExtResource("3_okut3")
 level1_track = ExtResource("3_aibji")
+win_track = ExtResource("5_eli5w")
+lose_track = ExtResource("6_fejag")
+final_track = ExtResource("7_ag488")

@@ -7,6 +7,9 @@ var move_vector : Vector2 = Vector2.ZERO
 @export var backward_speed: float = 160000.0
 @export var turn_speed: float = 100.0
 
+var shall_win = false
+var shall_lose = false
+
 func set_vector(vec:Vector2):
 	move_vector = vec
 

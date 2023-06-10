@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctitp82qqmy2f"]
+
+[ext_resource type="Script" path="res://menu_win.gd" id="1_hs1m7"]
+
+[node name="MenuWin" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_hs1m7")
+
+[node name="ButtonNext" type="Button" parent="."]
+offset_left = 219.0
+offset_top = 22.0
+offset_right = 314.0
+offset_bottom = 70.0
+text = "next"
+
+[connection signal="pressed" from="ButtonNext" to="." method="_on_button_next_pressed"]
