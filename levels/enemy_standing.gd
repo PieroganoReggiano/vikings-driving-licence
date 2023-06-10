@@ -1,14 +1,13 @@
 extends AnimatedSprite2D
 
 @export var fireball_scene : Resource
+@export var fireball_delay : float = 2
 
 func _ready():
-<<<<<<< HEAD
-	play("idle")
-=======
+	$Timer.wait_time = fireball_delay
+	$Timer.start(fireball_delay)
 	animation = "idle"
 	play()
->>>>>>> f4bc326 (reszta smokow)
 
 func _on_timer_timeout():
 	animation = "attack"
@@ -33,4 +32,3 @@ func _on_area_2d_area_entered(area):
 	timer.start(0.5)
 	await timer.timeout
 	queue_free()
-	

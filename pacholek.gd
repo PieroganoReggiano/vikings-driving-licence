@@ -6,12 +6,17 @@ const FireballClass = preload("res://fireball.gd")
 func _on_area_2d_body_entered(body):
 	$sprite_up.visible = false
 	rotation = (body.position - position).angle()
+#	$sprite_up/Area2D/CollisionShape2D.disabled = true
 	$sprite_up/Area2D.set_collision_layer_value(1, false)
-	$sprite_up/Area2D.set_collision_mask_value(5, false)
+	$sprite_up/Area2D.set_collision_layer_value(3, false)
 	$sprite_up/Area2D.set_collision_mask_value(1, false)
+	$sprite_up/Area2D.set_collision_mask_value(2, false)
+	$sprite_up/Area2D.set_collision_mask_value(3, false)
+	$sprite_up/Area2D.set_collision_mask_value(5, false)
+#	$CollisionShape2D.disabled = false
 	set_collision_layer_value(5, true)
-	set_collision_mask_value(5, true)
 	set_collision_mask_value(1, true)
+	set_collision_mask_value(5, true)
 	$sprite_down.visible = true
 	$GPUParticles2D.emitting = true
 	

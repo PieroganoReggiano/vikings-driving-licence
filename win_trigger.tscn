@@ -1,13 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://mqnbbxtecbx7"]
 
 [ext_resource type="Script" path="res://win_trigger.gd" id="1_2rrfb"]
-[ext_resource type="SpriteFrames" uid="uid://bxkr146p7alkv" path="res://work_textures/rune.res" id="2_jsn7q"]
+[ext_resource type="SpriteFrames" path="res://work_textures/rune.res" id="2_jsn7q"]
 [ext_resource type="Script" path="res://AutoAnimatedSprite.gd" id="3_b7nl4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahrqm"]
 size = Vector2(66, 64)
 
 [node name="WinTrigger" type="Area2D"]
+collision_layer = 64
+collision_mask = 64
 script = ExtResource("1_2rrfb")
 
 [node name="Area" type="CollisionShape2D" parent="."]

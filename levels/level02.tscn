@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://level.gd" id="1_m4mox"]
 [ext_resource type="PackedScene" uid="uid://c2g61ky7rbwby" path="res://levels/level03.tscn" id="2_bsfi2"]
-
 [ext_resource type="Texture2D" uid="uid://dl5y5p71vxm6w" path="res://work_textures/bg2.png" id="2_wy6oq"]
 [ext_resource type="PackedScene" uid="uid://b2ugbkp33cm32" path="res://dragon.tscn" id="3_22x6n"]
 [ext_resource type="AudioStream" uid="uid://blnq1cu20xatx" path="res://SOUNDTRACK/Music/Level theme with more fierce drums and slightly other tone.ogg" id="3_60tkq"]
@@ -10,7 +9,6 @@
 [ext_resource type="SpriteFrames" uid="uid://bxkr146p7alkv" path="res://work_textures/rune.res" id="5_lbox6"]
 [ext_resource type="Script" path="res://AutoAnimatedSprite.gd" id="6_lc7jh"]
 [ext_resource type="PackedScene" uid="uid://bvh6rdk877c82" path="res://snieg.tscn" id="6_um1qy"]
-
 [ext_resource type="PackedScene" uid="uid://mqnbbxtecbx7" path="res://win_trigger.tscn" id="7_2reyf"]
 [ext_resource type="PackedScene" uid="uid://dgrhyc33ixujt" path="res://lose_trigger.tscn" id="8_brjt6"]
 

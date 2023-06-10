@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhoeo"]
 radius = 16.0
 
-[node name="Fireball" type="CharacterBody2D"]
+[node name="Fireball" type="Area2D"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_168lg")
