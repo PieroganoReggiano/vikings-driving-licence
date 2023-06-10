@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw7a4i0h2uaw4"]
+[gd_scene load_steps=6 format=3 uid="uid://dw7a4i0h2uaw4"]
 
 [ext_resource type="PackedScene" uid="uid://dwxng8ke0lcpi" path="res://dragon.tscn" id="1_hcsse"]
 [ext_resource type="PackedScene" uid="uid://ns3do5b8cw6k" path="res://controller.tscn" id="2_fh0py"]

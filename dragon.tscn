@@ -1,12 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwxng8ke0lcpi"]
+[gd_scene load_steps=5 format=3 uid="uid://b2ugbkp33cm32"]
 
 [ext_resource type="Script" path="res://dragon.gd" id="1_k7kuq"]
-[ext_resource type="PackedScene" uid="uid://cfpf50fet2656" path="res://dragon_control.tscn" id="2_ih1go"]
-[ext_resource type="SpriteFrames" uid="uid://bmtqupqcfiowx" path="res://work_textures/dragon.res" id="3_s1qc3"]
+[ext_resource type="PackedScene" path="res://dragon_control.tscn" id="2_ih1go"]
+[ext_resource type="SpriteFrames" uid="uid://djboqlm51mehx" path="res://work_textures/dragon.res" id="3_s1qc3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6770u"]
-radius = 34.0
-height = 134.0
+radius = 12.0
+height = 66.0
 
 [node name="Dragon" type="RigidBody2D"]
 collision_layer = 3
@@ -15,7 +15,6 @@ mass = 400.0
 script = ExtResource("1_k7kuq")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
 sprite_frames = ExtResource("3_s1qc3")
 animation = &"walk"
 
