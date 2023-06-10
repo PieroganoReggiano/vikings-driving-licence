@@ -52,7 +52,7 @@ func _physics_process(delta):
 	else:
 		set_animation_idle()
 	
-#	acceleration_force = acceleration_force.rotated(rotation)
+	acceleration_force = acceleration_force.rotated(rotation)
 	
 	if (linear_velocity != Vector2.ZERO):
 		acceleration_force -= linear_velocity * default_resistance
@@ -66,7 +66,6 @@ func _physics_process(delta):
 	handle_fire(delta)
 	
 	#rotation += (turn_speed * move_vector.x * delta)
-
 
 func get_direction_vector():
 	return Vector2(sin(rotation), -cos(rotation))
