@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dj8uicl8o4kcq"]
+[gd_scene load_steps=10 format=3 uid="uid://c2g61ky7rbwby"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_vpn6y"]
-[ext_resource type="PackedScene" uid="uid://bbhhhgxl0vkir" path="res://levels/level04.tscn" id="2_0f0io"]
-[ext_resource type="SpriteFrames" uid="uid://dqc6c5j2rxekw" path="res://work_textures/level_ice.res" id="2_n1qxw"]
+[ext_resource type="PackedScene" path="res://levels/level04.tscn" id="2_0f0io"]
+[ext_resource type="SpriteFrames" uid="uid://bevbo85q8jsmd" path="res://work_textures/level_ice.res" id="2_n1qxw"]
 [ext_resource type="PackedScene" uid="uid://b2ugbkp33cm32" path="res://dragon.tscn" id="3_6ft6n"]
 [ext_resource type="AudioStream" uid="uid://8s30o4oqa7lu" path="res://SOUNDTRACK/Music/mega chillowe.ogg" id="3_8u5dr"]
 [ext_resource type="PackedScene" uid="uid://crv2dmupgiyg6" path="res://pacholek.tscn" id="5_j63fv"]
@@ -31,6 +31,318 @@ position = Vector2(-285, -205)
 position = Vector2(-148, -111)
 rotation = 0.261799
 
+[node name="pacholek50" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-199, -137)
+rotation = 0.261799
+
+[node name="pacholek51" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-307, -126)
+rotation = 0.261799
+
+[node name="pacholek52" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-317, -65)
+rotation = 0.261799
+
+[node name="pacholek53" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-300, -4)
+rotation = 0.261799
+
+[node name="pacholek54" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-267, 59)
+rotation = 0.261799
+
+[node name="pacholek55" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-231, 116)
+rotation = 0.261799
+
+[node name="pacholek56" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-163, 147)
+rotation = 0.261799
+
+[node name="pacholek57" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-167, 68)
+rotation = 0.261799
+
+[node name="pacholek58" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-197, 17)
+rotation = 0.261799
+
+[node name="pacholek59" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-231, -37)
+rotation = 0.261799
+
+[node name="pacholek60" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-189, -40)
+rotation = 3.14369
+
+[node name="pacholek61" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-130, -24)
+rotation = 3.14369
+
+[node name="pacholek62" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-74, -6)
+rotation = 3.14369
+
+[node name="pacholek63" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-16, 12)
+rotation = 3.14369
+
+[node name="pacholek64" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-5, 60)
+rotation = 3.14369
+
+[node name="pacholek65" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-69, 72)
+rotation = 3.14369
+
+[node name="pacholek66" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-120, 70)
+rotation = 3.08224
+
+[node name="pacholek67" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-112, 152)
+rotation = 3.08224
+
+[node name="pacholek68" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-52, 148)
+rotation = 3.08224
+
+[node name="pacholek69" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(6, 132)
+rotation = 3.08224
+
+[node name="pacholek70" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(53, 111)
+rotation = 3.08224
+
+[node name="pacholek71" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(105, 96)
+rotation = 3.08224
+
+[node name="pacholek72" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(157, 125)
+rotation = 3.08224
+
+[node name="pacholek73" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(212, 146)
+rotation = 3.08224
+
+[node name="pacholek74" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(135, 26)
+rotation = 3.08224
+
+[node name="pacholek75" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(180, 44)
+rotation = 3.08224
+
+[node name="pacholek76" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(225, 66)
+rotation = 3.08224
+
+[node name="pacholek77" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(281, 92)
+rotation = 3.08224
+
+[node name="pacholek78" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(327, 131)
+rotation = 3.08224
+
+[node name="pacholek79" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(307, 186)
+rotation = 3.08224
+
+[node name="pacholek80" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(254, 220)
+rotation = 3.08224
+
+[node name="pacholek81" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(161, 162)
+rotation = 3.08224
+
+[node name="pacholek82" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(195, 237)
+rotation = 3.08224
+
+[node name="pacholek83" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(102, 165)
+rotation = 3.08224
+
+[node name="pacholek84" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(131, 245)
+rotation = 3.08224
+
+[node name="pacholek85" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(46, 161)
+rotation = 3.08224
+
+[node name="pacholek87" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(79, 250)
+rotation = 3.08224
+
+[node name="pacholek86" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-8, 167)
+rotation = 3.08224
+
+[node name="pacholek88" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(21, 248)
+rotation = 3.08224
+
+[node name="pacholek89" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-36, 247)
+rotation = 3.08224
+
+[node name="pacholek90" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-110, 244)
+rotation = 3.08224
+
+[node name="pacholek91" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-177, 246)
+rotation = 3.08224
+
+[node name="pacholek92" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-240, 249)
+rotation = 3.08224
+
+[node name="pacholek93" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-223, 165)
+rotation = 3.08224
+
+[node name="pacholek94" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-294, 155)
+rotation = 3.08224
+
+[node name="pacholek95" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-303, 254)
+rotation = 3.08224
+
+[node name="pacholek14" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-78, -251)
+rotation = 0.261799
+
+[node name="pacholek17" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-59, -165)
+rotation = 0.261799
+
+[node name="pacholek19" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-8, -166)
+rotation = 0.261799
+
+[node name="pacholek20" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(10, -247)
+rotation = 0.261799
+
+[node name="pacholek22" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(51, -242)
+rotation = 0.261799
+
+[node name="pacholek23" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(77, -163)
+rotation = 0.261799
+
+[node name="pacholek24" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(100, -247)
+rotation = 0.261799
+
+[node name="pacholek25" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(122, -167)
+rotation = 0.261799
+
+[node name="pacholek27" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(167, -164)
+rotation = 0.261799
+
+[node name="pacholek28" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(170, -254)
+rotation = 0.261799
+
+[node name="pacholek29" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(243, -256)
+rotation = 0.261799
+
+[node name="pacholek30" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(305, -257)
+rotation = 0.261799
+
+[node name="pacholek31" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(340, -230)
+rotation = 0.261799
+
+[node name="pacholek32" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(338, -188)
+rotation = 3.3356
+
+[node name="pacholek34" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(307, -119)
+rotation = 3.3356
+
+[node name="pacholek41" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(283, -90)
+rotation = 3.3356
+
+[node name="pacholek42" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(249, -64)
+rotation = 3.3356
+
+[node name="pacholek43" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(209, -44)
+rotation = 3.3356
+
+[node name="pacholek45" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(142, -25)
+rotation = 3.3356
+
+[node name="pacholek47" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(74, 10)
+rotation = 3.3356
+
+[node name="pacholek35" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(204, -162)
+rotation = 3.3356
+
+[node name="pacholek37" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(151, -128)
+rotation = 4.14257
+
+[node name="pacholek39" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(78, -85)
+rotation = 4.14257
+
+[node name="pacholek40" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(43, -68)
+rotation = 4.14257
+
+[node name="pacholek48" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-62, -90)
+rotation = -1.14333
+
+[node name="pacholek49" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-23, -77)
+rotation = -1.14333
+
+[node name="pacholek9" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-229, -164)
+rotation = 0.891116
+
+[node name="pacholek15" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-280, -162)
+rotation = 0.891116
+
+[node name="pacholek16" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-323, -158)
+rotation = 2.15262
+
+[node name="pacholek10" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-172, -167)
+rotation = 1.95204
+
+[node name="pacholek12" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-200, -247)
+rotation = 0.900387
+
+[node name="pacholek13" parent="cones" instance=ExtResource("5_j63fv")]
+position = Vector2(-146, -249)
+rotation = 0.900387
+
 [node name="snieg" parent="." instance=ExtResource("6_1xhd1")]
 
 [node name="LoseTrigger2" parent="." instance=ExtResource("7_tna67")]
@@ -38,8 +350,23 @@ position = Vector2(-11, -333)
 rotation = 0.00756871
 scale = Vector2(7, 1)
 
+[node name="LoseTrigger5" parent="." instance=ExtResource("7_tna67")]
+position = Vector2(10, -135)
+rotation = 0.00756871
+scale = Vector2(2.81496, 0.478805)
+
+[node name="LoseTrigger6" parent="." instance=ExtResource("7_tna67")]
+position = Vector2(-114, 19)
+rotation = 0.350697
+scale = Vector2(-1.61631, 0.38675)
+
+[node name="LoseTrigger8" parent="." instance=ExtResource("7_tna67")]
+position = Vector2(235, -3)
+rotation = -0.0837874
+scale = Vector2(-1.61631, 0.38675)
+
 [node name="LoseTrigger3" parent="." instance=ExtResource("7_tna67")]
-position = Vector2(3, 342)
+position = Vector2(1, 322)
 rotation = 0.0268997
 scale = Vector2(7, 1)
 
@@ -54,4 +381,4 @@ rotation = 1.55615
 scale = Vector2(9.41271, 1)
 
 [node name="WinTrigger" parent="." instance=ExtResource("8_41kty")]
-position = Vector2(269, -173)
+position = Vector2(-283, 207)
