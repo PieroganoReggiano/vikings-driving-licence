@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://crv2dmupgiyg6"]
+
+[ext_resource type="Script" path="res://pacholek.gd" id="1_g6fki"]
+[ext_resource type="Texture2D" uid="uid://byv7i8jiiwfcy" path="res://work_textures/cone_up.tres" id="2_2au0p"]
+[ext_resource type="Texture2D" uid="uid://b0ev3mnusddnt" path="res://work_textures/cone_down.tres" id="3_a0odv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8s2s0"]
+radius = 12.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bj78v"]
+
+[node name="pacholek" type="RigidBody2D"]
+position = Vector2(246, -43)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_g6fki")
+
+[node name="sprite_up" type="Sprite2D" parent="."]
+texture = ExtResource("2_2au0p")
+
+[node name="Area2D" type="Area2D" parent="sprite_up"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sprite_up/Area2D"]
+shape = SubResource("CircleShape2D_8s2s0")
+
+[node name="sprite_down" type="Sprite2D" parent="."]
+visible = false
+rotation = -1.5708
+texture = ExtResource("3_a0odv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, 0)
+rotation = 0.785397
+shape = SubResource("RectangleShape2D_bj78v")
+
+[connection signal="body_entered" from="sprite_up/Area2D" to="." method="_on_area_2d_body_entered"]
