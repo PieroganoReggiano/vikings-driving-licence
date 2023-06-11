@@ -67,7 +67,7 @@ func _process(delta):
 	time_since_roar += delta
 	var roar = get_node_or_null("Roar")
 	if roar == null:
-		if Input.is_action_just_pressed("roar") or random_roar_now:
+		if (Input.is_action_just_pressed("roar") or random_roar_now) and not grounded:
 			roar = AudioStreamPlayer2D.new()
 			roar.name = "Roar"
 			add_child(roar)
