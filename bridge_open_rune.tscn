@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbaimblkyvi6w"]
 
 [ext_resource type="Script" path="res://door_open_rune.gd" id="1_ef4t4"]
-[ext_resource type="SpriteFrames" uid="uid://bxkr146p7alkv" path="res://work_textures/rune.res" id="2_ojuf5"]
+[ext_resource type="SpriteFrames" uid="uid://hp7xduhyb6cm" path="res://work_textures/rune_water.res" id="2_n8s5u"]
 [ext_resource type="Script" path="res://AutoAnimatedSprite.gd" id="3_isyse"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahrqm"]
@@ -16,9 +16,8 @@ script = ExtResource("1_ef4t4")
 shape = SubResource("RectangleShape2D_ahrqm")
 
 [node name="RuneA" type="AnimatedSprite2D" parent="."]
-position = Vector2(3, 0)
-sprite_frames = ExtResource("2_ojuf5")
-animation = &"ride"
+position = Vector2(6, -2)
+sprite_frames = ExtResource("2_n8s5u")
 script = ExtResource("3_isyse")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
