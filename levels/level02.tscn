@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cf5e6wp2tu2r7"]
+[gd_scene load_steps=14 format=3 uid="uid://cf5e6wp2tu2r7"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_m4mox"]
 [ext_resource type="PackedScene" uid="uid://bmdbl14gmfbvb" path="res://levels/level03.tscn" id="2_bsfi2"]
@@ -10,7 +10,9 @@
 [ext_resource type="Script" path="res://AutoAnimatedSprite.gd" id="6_lc7jh"]
 [ext_resource type="PackedScene" uid="uid://bvh6rdk877c82" path="res://snieg.tscn" id="6_um1qy"]
 [ext_resource type="PackedScene" uid="uid://ddvbgtiadidyd" path="res://win_rune.tscn" id="7_2reyf"]
+[ext_resource type="PackedScene" uid="uid://dvw4wdkrwfdgf" path="res://door_open_rune.tscn" id="7_dq0wx"]
 [ext_resource type="PackedScene" uid="uid://dgrhyc33ixujt" path="res://lose_trigger.tscn" id="8_brjt6"]
+[ext_resource type="PackedScene" uid="uid://bfy7niqdtd447" path="res://door.tscn" id="13_h70rq"]
 
 [node name="Level" type="Node2D"]
 process_mode = 1
@@ -25,17 +27,24 @@ metadata/_edit_lock_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="RuneRide" type="AnimatedSprite2D" parent="."]
-position = Vector2(-300, -165)
+position = Vector2(-286, -164)
 sprite_frames = ExtResource("5_lbox6")
 animation = &"ride"
 script = ExtResource("6_lc7jh")
 
+[node name="DoorOpenRune" parent="." node_paths=PackedStringArray("door") instance=ExtResource("7_dq0wx")]
+position = Vector2(-38, -61)
+door = NodePath("../Door")
+
 [node name="WinRune" parent="." instance=ExtResource("7_2reyf")]
 position = Vector2(269, -173)
 
+[node name="Door" parent="." instance=ExtResource("13_h70rq")]
+position = Vector2(104, -51)
+
 [node name="Dragon" parent="." instance=ExtResource("3_22x6n")]
-position = Vector2(-268, -163)
-rotation = 1.5708
+position = Vector2(-281, -164)
+rotation = 0.25925
 
 [node name="cones" type="Node2D" parent="."]
 
@@ -48,7 +57,7 @@ position = Vector2(-296, -117)
 rotation = 1.309
 
 [node name="pacholek5" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(-233, 35)
+position = Vector2(-237, -1)
 rotation = 2.35619
 
 [node name="pacholek4" parent="cones" instance=ExtResource("5_gligk")]
@@ -59,26 +68,27 @@ rotation = 1.5708
 position = Vector2(-271, -209)
 rotation = 0.785398
 
+[node name="pacholek10" parent="cones" instance=ExtResource("5_gligk")]
+position = Vector2(-327, -150)
+rotation = 0.785398
+
+[node name="pacholek26" parent="cones" instance=ExtResource("5_gligk")]
+position = Vector2(-319, -198)
+rotation = 0.785398
+
 [node name="pacholek2" parent="cones" instance=ExtResource("5_gligk")]
 position = Vector2(-274, 153)
 
-[node name="pacholek" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(-209, -61)
-
 [node name="pacholek8" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(-213, -5.99998)
+position = Vector2(-225, -65)
 rotation = 0.785398
 
 [node name="pacholek9" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(-225, -201)
+position = Vector2(-205, -191)
 rotation = 0.785398
 
-[node name="pacholek10" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(-184, -185)
-rotation = -0.523599
-
 [node name="pacholek11" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(-159, -160)
+position = Vector2(-165, -166)
 rotation = -0.785398
 
 [node name="pacholek27" parent="cones" instance=ExtResource("5_gligk")]
@@ -86,7 +96,7 @@ position = Vector2(-130, -121)
 rotation = -0.785398
 
 [node name="pacholek28" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(-112, -77)
+position = Vector2(-114, -60)
 rotation = -0.785398
 
 [node name="pacholek33" parent="cones" instance=ExtResource("5_gligk")]
@@ -114,15 +124,11 @@ position = Vector2(73, -222)
 rotation = -0.785398
 
 [node name="pacholek29" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(-114, -26)
+position = Vector2(-114, 2)
 rotation = -0.866752
 
 [node name="pacholek30" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(-112, 29)
-rotation = -0.866752
-
-[node name="pacholek31" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(-120, 72)
+position = Vector2(-115, 56)
 rotation = -0.866752
 
 [node name="pacholek32" parent="cones" instance=ExtResource("5_gligk")]
@@ -134,15 +140,11 @@ position = Vector2(5, 102)
 rotation = -1.5708
 
 [node name="pacholek25" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(8, 61)
-rotation = -1.5708
-
-[node name="pacholek26" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(16, 17)
+position = Vector2(28, 59)
 rotation = -1.5708
 
 [node name="pacholek39" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(30, -33)
+position = Vector2(41, -33)
 rotation = -1.5708
 
 [node name="pacholek40" parent="cones" instance=ExtResource("5_gligk")]
@@ -150,11 +152,7 @@ position = Vector2(43, -80)
 rotation = -1.5708
 
 [node name="pacholek41" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(53, 9)
-rotation = -1.5708
-
-[node name="pacholek42" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(51, 61)
+position = Vector2(40, 23)
 rotation = -1.5708
 
 [node name="pacholek43" parent="cones" instance=ExtResource("5_gligk")]
@@ -170,31 +168,27 @@ position = Vector2(39, 224)
 rotation = -1.5708
 
 [node name="pacholek46" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(91, 234)
+position = Vector2(86, 246)
 rotation = -1.5708
 
 [node name="pacholek47" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(127, 234)
-rotation = -1.5708
-
-[node name="pacholek48" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(170, 237)
+position = Vector2(149, 250)
 rotation = -1.5708
 
 [node name="pacholek49" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(215, 224)
+position = Vector2(203, 230)
 rotation = -1.5708
 
 [node name="pacholek50" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(246, 201)
+position = Vector2(259, 189)
 rotation = -1.5708
 
 [node name="pacholek51" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(265, 167)
+position = Vector2(270, 137)
 rotation = -2.23558
 
 [node name="pacholek13" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(296, -128)
+position = Vector2(325, -193)
 rotation = 1.5708
 
 [node name="pacholek14" parent="cones" instance=ExtResource("5_gligk")]
@@ -225,20 +219,16 @@ rotation = 1.309
 position = Vector2(143, -153)
 rotation = 1.309
 
-[node name="pacholek61" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(179, -183)
-rotation = 1.309
-
 [node name="pacholek62" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(216, -211)
+position = Vector2(178, -193)
 rotation = 1.309
 
 [node name="pacholek63" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(261, -224)
+position = Vector2(224, -220)
 rotation = 1.309
 
 [node name="pacholek64" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(302, -224)
+position = Vector2(283, -224)
 rotation = 1.309
 
 [node name="pacholek16" parent="cones" instance=ExtResource("5_gligk")]
@@ -250,11 +240,11 @@ position = Vector2(-229, 222)
 rotation = -1.309
 
 [node name="pacholek18" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(-246, 74)
+position = Vector2(-248, 49)
 rotation = 0.785398
 
 [node name="pacholek19" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(-265, 112)
+position = Vector2(-266, 102)
 rotation = 0.785398
 
 [node name="pacholek20" parent="cones" instance=ExtResource("5_gligk")]
@@ -262,7 +252,7 @@ position = Vector2(-266, 194)
 rotation = -0.523599
 
 [node name="pacholek21" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(-186, 232)
+position = Vector2(-175, 241)
 rotation = -0.261799
 
 [node name="pacholek22" parent="cones" instance=ExtResource("5_gligk")]
@@ -270,27 +260,23 @@ position = Vector2(-114, 235)
 rotation = -0.785398
 
 [node name="pacholek23" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(295, 138)
+position = Vector2(290, 86)
 rotation = 0.785398
 
 [node name="pacholek24" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(293, 94)
+position = Vector2(291, 26)
 rotation = 1.309
 
 [node name="pacholek52" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(290, 47)
+position = Vector2(286, -39)
 rotation = 1.309
 
 [node name="pacholek53" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(291, -6)
+position = Vector2(274, -99)
 rotation = 1.309
 
-[node name="pacholek54" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(287, -54)
-rotation = 0.989556
-
 [node name="pacholek55" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(276, -103)
+position = Vector2(325, -131)
 rotation = 0.989556
 
 [node name="snieg" parent="." instance=ExtResource("6_um1qy")]
@@ -301,7 +287,7 @@ rotation = 0.00756871
 scale = Vector2(7, 1)
 
 [node name="LoseTrigger3" parent="." instance=ExtResource("8_brjt6")]
-position = Vector2(13, 290)
+position = Vector2(11, 301)
 rotation = 0.0268997
 scale = Vector2(7, 1)
 

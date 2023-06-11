@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf65570blp4c3"]
+[gd_scene load_steps=10 format=3 uid="uid://bf65570blp4c3"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_leldd"]
 [ext_resource type="SpriteFrames" uid="uid://b2ttclh2cuvuu" path="res://work_textures/level_water.res" id="2_ympuv"]
 [ext_resource type="PackedScene" uid="uid://b2ugbkp33cm32" path="res://dragon.tscn" id="3_18jqu"]
+[ext_resource type="PackedScene" uid="uid://dvw4wdkrwfdgf" path="res://door_open_rune.tscn" id="5_tpjtq"]
 [ext_resource type="PackedScene" uid="uid://dgrhyc33ixujt" path="res://lose_trigger.tscn" id="7_ovuxy"]
 [ext_resource type="PackedScene" uid="uid://cyh60x1enoqor" path="res://enemy_flying.tscn" id="7_rl1xn"]
 [ext_resource type="PackedScene" uid="uid://ddvbgtiadidyd" path="res://win_rune.tscn" id="8_1k2lw"]
 [ext_resource type="PackedScene" uid="uid://cwg3whgjuqllt" path="res://enemy_standing.tscn" id="8_yq2gf"]
+[ext_resource type="PackedScene" uid="uid://bfy7niqdtd447" path="res://door.tscn" id="9_wjw7e"]
 
 [node name="Level" type="Node2D"]
 process_mode = 1
@@ -76,6 +78,13 @@ grounds = true
 
 [node name="WinRune" parent="." instance=ExtResource("8_1k2lw")]
 position = Vector2(-19, 194)
+
+[node name="DoorOpenRune" parent="." node_paths=PackedStringArray("door") instance=ExtResource("5_tpjtq")]
+position = Vector2(-269, 39)
+door = NodePath("../Door")
+
+[node name="Door" parent="." instance=ExtResource("9_wjw7e")]
+position = Vector2(-85, 122)
 
 [node name="Dragon" parent="." instance=ExtResource("3_18jqu")]
 position = Vector2(-252, -166)

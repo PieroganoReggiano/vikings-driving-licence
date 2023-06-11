@@ -63,12 +63,24 @@ rotation = 1.309
 position = Vector2(-82, -64)
 rotation = 2.35619
 
+[node name="pacholek40" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-128, -65)
+rotation = 2.35619
+
 [node name="pacholek4" parent="cones" instance=ExtResource("3_8yruf")]
 position = Vector2(134, -83)
 rotation = 1.5708
 
+[node name="pacholek36" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(90, -80)
+rotation = 1.5708
+
 [node name="pacholek3" parent="cones" instance=ExtResource("3_8yruf")]
 position = Vector2(-242, -197)
+rotation = 0.785398
+
+[node name="pacholek41" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-286, -172)
 rotation = 0.785398
 
 [node name="pacholek2" parent="cones" instance=ExtResource("3_8yruf")]
@@ -89,8 +101,20 @@ rotation = 0.785398
 position = Vector2(26, -203)
 rotation = -0.523599
 
+[node name="pacholek39" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-26, -190)
+rotation = -0.523599
+
 [node name="pacholek11" parent="cones" instance=ExtResource("3_8yruf")]
 position = Vector2(136, -229)
+rotation = -0.785398
+
+[node name="pacholek37" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(81, -220)
+rotation = -0.785398
+
+[node name="pacholek38" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(187, -219)
 rotation = -0.785398
 
 [node name="pacholek12" parent="cones" instance=ExtResource("3_8yruf")]
@@ -105,12 +129,24 @@ rotation = 1.5708
 position = Vector2(192, -13)
 rotation = 0.785398
 
+[node name="pacholek35" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(193, 44)
+rotation = 0.785398
+
 [node name="pacholek15" parent="cones" instance=ExtResource("3_8yruf")]
-position = Vector2(324, -18)
+position = Vector2(316, -72)
 rotation = 1.309
 
 [node name="pacholek16" parent="cones" instance=ExtResource("3_8yruf")]
 position = Vector2(147, 74)
+rotation = -1.0472
+
+[node name="pacholek31" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(80, 93)
+rotation = -1.0472
+
+[node name="pacholek32" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(184, -80)
 rotation = -1.0472
 
 [node name="pacholek17" parent="cones" instance=ExtResource("3_8yruf")]
@@ -125,8 +161,32 @@ rotation = 0.785398
 position = Vector2(-134, 192)
 rotation = 0.785398
 
+[node name="pacholek25" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-231, 187)
+rotation = 0.785398
+
+[node name="pacholek26" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-307, 162)
+rotation = 0.785398
+
+[node name="pacholek27" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-306, 104)
+rotation = 0.785398
+
+[node name="pacholek28" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-225, 68)
+rotation = 0.785398
+
 [node name="pacholek20" parent="cones" instance=ExtResource("3_8yruf")]
 position = Vector2(3.00001, 219)
+rotation = -0.523599
+
+[node name="pacholek29" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-62, 191)
+rotation = -0.523599
+
+[node name="pacholek30" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(-50, 64)
 rotation = -0.523599
 
 [node name="pacholek21" parent="cones" instance=ExtResource("3_8yruf")]
@@ -134,7 +194,11 @@ position = Vector2(118, 224)
 rotation = -0.261799
 
 [node name="pacholek22" parent="cones" instance=ExtResource("3_8yruf")]
-position = Vector2(222, 200)
+position = Vector2(189, 208)
+rotation = -0.785398
+
+[node name="pacholek33" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(242, 175)
 rotation = -0.785398
 
 [node name="pacholek23" parent="cones" instance=ExtResource("3_8yruf")]
@@ -142,7 +206,11 @@ position = Vector2(295, 138)
 rotation = 0.785398
 
 [node name="pacholek24" parent="cones" instance=ExtResource("3_8yruf")]
-position = Vector2(323, 59)
+position = Vector2(322, 84)
+rotation = 1.309
+
+[node name="pacholek34" parent="cones" instance=ExtResource("3_8yruf")]
+position = Vector2(322, 26)
 rotation = 1.309
 
 [node name="snieg" parent="." instance=ExtResource("5_moa1m")]
