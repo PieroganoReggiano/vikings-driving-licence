@@ -84,7 +84,7 @@ scale = Vector2(3.34098, 1.2089)
 type = 2
 
 [node name="LoseTrigger6" parent="loseboxes" instance=ExtResource("7_ovuxy")]
-position = Vector2(194, 246)
+position = Vector2(201, 260)
 scale = Vector2(3.2, 2.4)
 type = 2
 
@@ -111,7 +111,7 @@ door = NodePath("../Door")
 position = Vector2(-85, 122)
 
 [node name="Bridge" parent="." instance=ExtResource("12_l8sjj")]
-position = Vector2(-13, -20)
+position = Vector2(-14, -20)
 
 [node name="BridgeOpenRune" parent="." node_paths=PackedStringArray("door") instance=ExtResource("10_pubev")]
 position = Vector2(270, 89)

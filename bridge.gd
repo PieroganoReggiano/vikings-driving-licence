@@ -17,6 +17,7 @@ func finish_open():
 
 func _on_body_entered(body):
 	if body is DragonClass:
+		body.shall_lose = true
 		body.drown()
 
 
