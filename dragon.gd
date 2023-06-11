@@ -60,22 +60,17 @@ func _physics_process(delta):
 	handle_movement_and_physics(delta)
 	handle_animation(delta)
 
-
 func handle_movement_and_physics(_delta):
 	var acceleration_force = Vector2.ZERO
 	move_vector = Vector2.ZERO
 	
-		
 	if not $Sprite.animation == "attack_loop":
 		move_vector = Vector2(Input.get_axis("forward", "backward"), Input.get_axis("left", "right"))
 		if Input.is_action_just_pressed("fire") and fireball_wait <= 0.0:
 			requesting_fire = true
 		
-		
 	if move_vector.x > 0:
 		move_vector.y = -move_vector.y
-	
-	
 	
 	if move_vector.x < 0.0:
 		acceleration_force += Vector2(forward_speed, 0.0)
@@ -140,3 +135,12 @@ func _on_sprite_frame_changed():
 func _on_sprite_animation_looped():
 	if $Sprite.animation == "attack_loop":
 		$Sprite.play("idle")
+
+func drown():
+#	controls_locked = true
+	$drown.emitting = true
+	var timer = Timer.new()
+	add_child(timer)
+	timer.start(2)
+	await timer.timeout
+	shall_lose = true
