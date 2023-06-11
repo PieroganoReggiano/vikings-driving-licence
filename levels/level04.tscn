@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bf65570blp4c3"]
+[gd_scene load_steps=14 format=3 uid="uid://bf65570blp4c3"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_leldd"]
 [ext_resource type="PackedScene" uid="uid://cn18rf4q6dayp" path="res://levels/level05.tscn" id="2_7eboe"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://ddvbgtiadidyd" path="res://win_rune.tscn" id="8_1k2lw"]
 [ext_resource type="PackedScene" uid="uid://cwg3whgjuqllt" path="res://enemy_standing.tscn" id="8_yq2gf"]
 [ext_resource type="PackedScene" uid="uid://bfy7niqdtd447" path="res://door.tscn" id="9_wjw7e"]
+[ext_resource type="PackedScene" uid="uid://cbaimblkyvi6w" path="res://bridge_open_rune.tscn" id="10_pubev"]
+[ext_resource type="PackedScene" uid="uid://bnt0i7pfak1ct" path="res://bridge.tscn" id="12_l8sjj"]
 
 [node name="Level" type="Node2D"]
 process_mode = 1
@@ -30,7 +32,7 @@ scale = Vector2(7, 1)
 type = 2
 
 [node name="LoseTrigger3" parent="loseboxes" instance=ExtResource("7_ovuxy")]
-position = Vector2(8, 317)
+position = Vector2(12, 299)
 scale = Vector2(7, 1)
 type = 2
 
@@ -49,13 +51,13 @@ type = 2
 [node name="LoseTrigger8" parent="loseboxes" instance=ExtResource("7_ovuxy")]
 position = Vector2(-181, -92)
 rotation = 3.14159
-scale = Vector2(5.29271, 0.56)
+scale = Vector2(5.29271, 0.52)
 type = 2
 
 [node name="LoseTrigger9" parent="loseboxes" instance=ExtResource("7_ovuxy")]
-position = Vector2(204, 51)
+position = Vector2(66, 53)
 rotation = 3.14159
-scale = Vector2(5.29271, 0.48)
+scale = Vector2(2.77271, 0.479999)
 type = 2
 
 [node name="LoseTrigger5" parent="loseboxes" instance=ExtResource("7_ovuxy")]
@@ -69,13 +71,18 @@ scale = Vector2(3.34098, 1.2089)
 type = 2
 
 [node name="LoseTrigger6" parent="loseboxes" instance=ExtResource("7_ovuxy")]
-position = Vector2(208, 170)
+position = Vector2(194, 246)
 scale = Vector2(3.2, 2.4)
 type = 2
 
+[node name="LoseTrigger13" parent="loseboxes" instance=ExtResource("7_ovuxy")]
+position = Vector2(128, 108)
+scale = Vector2(1.69204, 0.900333)
+type = 2
+
 [node name="LoseTrigger10" parent="loseboxes" instance=ExtResource("7_ovuxy")]
-position = Vector2(289, -93)
-scale = Vector2(1.6, 2.4)
+position = Vector2(279, -137)
+scale = Vector2(1.44, 1.55313)
 type = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -90,10 +97,18 @@ door = NodePath("../Door")
 [node name="Door" parent="." instance=ExtResource("9_wjw7e")]
 position = Vector2(-85, 122)
 
+[node name="Bridge" parent="." instance=ExtResource("12_l8sjj")]
+position = Vector2(-13, -20)
+
+[node name="BridgeOpenRune" parent="." node_paths=PackedStringArray("door") instance=ExtResource("10_pubev")]
+position = Vector2(270, 89)
+door = NodePath("../Bridge")
+
 [node name="Dragon" parent="." instance=ExtResource("3_18jqu")]
 position = Vector2(-252, -166)
 
 [node name="enemy_flying" parent="." instance=ExtResource("7_rl1xn")]
+position = Vector2(267, 46)
 animation = &"attack"
 frame_progress = 0.0
 

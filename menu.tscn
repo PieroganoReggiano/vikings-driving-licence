@@ -150,5 +150,5 @@ text = "Credits"
 [connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]
 [connection signal="focus_entered" from="ButtonCredits" to="." method="_on_play_sound"]
 [connection signal="mouse_entered" from="ButtonCredits" to="." method="_on_play_sound"]
-[connection signal="pressed" from="ButtonCredits" to="." method="_on_play_sound"]
 [connection signal="pressed" from="ButtonCredits" to="." method="_on_button_credits_pressed"]
+[connection signal="pressed" from="ButtonCredits" to="." method="_on_play_sound"]

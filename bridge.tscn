@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnt0i7pfak1ct"]
+
+[ext_resource type="Script" path="res://bridge.gd" id="1_daupa"]
+[ext_resource type="SpriteFrames" uid="uid://bvb8lk36mh00e" path="res://work_textures/wooden_bridge.res" id="2_cn0aw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_822xy"]
+size = Vector2(74, 24)
+
+[node name="Bridge" type="Area2D"]
+collision_layer = 113
+collision_mask = 113
+script = ExtResource("1_daupa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_822xy")
+one_way_collision_margin = 4.3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_cn0aw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
