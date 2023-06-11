@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2ugbkp33cm32"]
+[gd_scene load_steps=11 format=3 uid="uid://b2ugbkp33cm32"]
 
 [ext_resource type="Script" path="res://dragon.gd" id="1_k7kuq"]
 [ext_resource type="PackedScene" uid="uid://my3b1hkmkum5" path="res://fireball.tscn" id="2_1fghx"]
+[ext_resource type="AudioStream" uid="uid://ypvbp1wkpijq" path="res://SOUNDTRACK/sfx/dragon roar.ogg" id="3_i4kvo"]
 [ext_resource type="SpriteFrames" uid="uid://bmtqupqcfiowx" path="res://work_textures/dragon.res" id="3_s1qc3"]
+[ext_resource type="AudioStream" uid="uid://buf2bf0cajvdt" path="res://SOUNDTRACK/sfx/walking dragon sound.ogg" id="4_fx0mx"]
+[ext_resource type="AudioStream" uid="uid://dcwogobnr3gkk" path="res://SOUNDTRACK/sfx/fireball.ogg" id="5_fqvel"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6770u"]
 radius = 12.0
@@ -43,6 +46,9 @@ mass = 400.0
 freeze_mode = 1
 script = ExtResource("1_k7kuq")
 fireball_scene = ExtResource("2_1fghx")
+roar_stream = ExtResource("3_i4kvo")
+step_stream = ExtResource("4_fx0mx")
+fire_stream = ExtResource("5_fqvel")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 rotation = 1.57079

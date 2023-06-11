@@ -77,5 +77,11 @@ shortcut = SubResource("Shortcut_umec5")
 shortcut_in_tooltip = false
 text = "Back to main menu..."
 
+[connection signal="focus_entered" from="TextureRect/ButtonRestart" to="." method="_on_play_sound"]
+[connection signal="mouse_entered" from="TextureRect/ButtonRestart" to="." method="_on_play_sound"]
 [connection signal="pressed" from="TextureRect/ButtonRestart" to="." method="_on_button_restart_pressed"]
+[connection signal="pressed" from="TextureRect/ButtonRestart" to="." method="_on_play_sound"]
+[connection signal="focus_entered" from="ButtonMenu" to="." method="_on_play_sound"]
+[connection signal="mouse_entered" from="ButtonMenu" to="." method="_on_play_sound"]
 [connection signal="pressed" from="ButtonMenu" to="." method="_on_button_menu_pressed"]
+[connection signal="pressed" from="ButtonMenu" to="." method="_on_play_sound"]

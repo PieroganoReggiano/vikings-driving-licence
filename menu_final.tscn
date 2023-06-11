@@ -96,4 +96,7 @@ rotation = -0.282678
 texture = ExtResource("5_uqax1")
 stretch_mode = 2
 
+[connection signal="focus_entered" from="ButtonMenu" to="." method="_on_play_sound"]
+[connection signal="mouse_entered" from="ButtonMenu" to="." method="_on_play_sound"]
 [connection signal="pressed" from="ButtonMenu" to="." method="_on_button_menu_pressed"]
+[connection signal="pressed" from="ButtonMenu" to="." method="_on_play_sound"]

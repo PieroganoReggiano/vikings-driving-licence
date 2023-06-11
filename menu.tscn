@@ -123,5 +123,11 @@ shortcut = SubResource("Shortcut_kgbe4")
 shortcut_in_tooltip = false
 text = "Give up!"
 
+[connection signal="focus_entered" from="MenuPaper/ButtonPlay" to="." method="_on_play_sound"]
+[connection signal="mouse_entered" from="MenuPaper/ButtonPlay" to="." method="_on_play_sound"]
 [connection signal="pressed" from="MenuPaper/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="MenuPaper/ButtonPlay" to="." method="_on_play_sound"]
+[connection signal="focus_entered" from="ButtonQuit" to="." method="_on_play_sound"]
+[connection signal="mouse_entered" from="ButtonQuit" to="." method="_on_play_sound"]
 [connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="ButtonQuit" to="." method="_on_play_sound"]

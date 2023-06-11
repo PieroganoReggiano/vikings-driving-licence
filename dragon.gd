@@ -3,6 +3,7 @@ extends RigidBody2D
 var move_vector : Vector2 = Vector2.ZERO
 var requesting_fire = false
 var fireball_wait = 0.5
+var time_since_roar = 480.0
 
 @export var default_resistance : float = 600.0
 @export var sqrt_resistance : float = 9000.0
@@ -11,10 +12,14 @@ var fireball_wait = 0.5
 @export var turn_speed: float = 200.0
 @export var fireball_scene : Resource
 @export var fireball_cooldown : float = 1.0
+@export var roar_stream : AudioStream
+@export var step_stream : AudioStream
+@export var fire_stream : AudioStream
 
 var shall_win = false
 var shall_lose = false
 var grounded = false
+var random_roar_now = false
 
 func _ready():
 	get_node("/root/Root").dragon = self
@@ -32,14 +37,14 @@ func anim_walk(speed:float):
 	sprite.scale.x = 1.0
 	if sprite.animation != "walk":
 		sprite.play("walk")
-	sprite.speed_scale = max(1.0, speed / 100.0)
+	sprite.speed_scale = max(1.0, speed / 60.0)
 	
 func anim_walk_turn(way:float, speed:float):
 	var sprite = $"Sprite"
 	if way * sprite.scale.x < 0.0 or sprite.animation != "walk_after_turn":
 		sprite.play("walk_after_turn")
 	sprite.scale.x = sign(way)
-	sprite.speed_scale = max(1.0, speed / 100.0)
+	sprite.speed_scale = max(1.0, speed / 60.0)
 	
 	
 func anim_turn(way:float):
@@ -56,6 +61,26 @@ func anim_fire():
 		sprite.play("attack_loop")
 	sprite.speed_scale = 1.0
 
+
+
+func _process(delta):
+	time_since_roar += delta
+	var roar = get_node_or_null("Roar")
+	if roar == null:
+		if Input.is_action_just_pressed("roar") or random_roar_now:
+			roar = AudioStreamPlayer2D.new()
+			roar.name = "Roar"
+			add_child(roar)
+			roar.stream = roar_stream
+			roar.play()
+			roar.volume_db = 12.0
+	else:
+		if not roar.playing:
+			remove_child(roar)
+			roar.queue_free()
+			time_since_roar = 0.0
+			random_roar_now = false
+
 func _physics_process(delta):
 	handle_cooldown(delta)
 	handle_movement_and_physics(delta)
@@ -70,7 +95,9 @@ func _physics_process(delta):
 		set_collision_mask_value(5, false)
 		set_collision_mask_value(6, false)
 		set_collision_mask_value(7, false)
-
+		
+	random_roar_now = random_roar_now or (randf() > pow(0.9998, 0.036 * time_since_roar))
+	
 func handle_movement_and_physics(_delta):
 	var acceleration_force = Vector2.ZERO
 	move_vector = Vector2.ZERO
@@ -151,6 +178,28 @@ func do_fire():
 func _on_sprite_frame_changed():
 	if $Sprite.animation == "attack_loop" and $Sprite.frame == 4:
 		do_fire()
+	if ($Sprite.animation == "walk" and $Sprite.frame in [2, 5]) or ($Sprite.animation == "turn_loop" and $Sprite.frame in [0, 3]) or ($Sprite.animation == "walk_after_turn" and $Sprite.frame == 2):
+		var walk_animation_speed = max(1.0, linear_velocity.length() * 0.0024)
+		var step = get_node_or_null("StepAudio")
+		if step == null:
+			step = AudioStreamPlayer2D.new()
+			step.name = "StepAudio"
+			add_child(step)
+		step.volume_db = 10.0
+		step.stream = step_stream
+		step.pitch_scale = walk_animation_speed
+		step.play()
+	if $Sprite.animation == "attack_loop" and $Sprite.frame == 2:
+		var fire_sound = get_node_or_null("FireSound")
+		if fire_sound == null:
+			fire_sound = AudioStreamPlayer2D.new()
+			fire_sound.name = "FireSound"
+			add_child(fire_sound)
+		fire_sound.volume_db = 3.0
+		fire_sound.stream = fire_stream
+		fire_sound.play()
+		
+		
 
 
 func _on_sprite_animation_looped():

@@ -2,6 +2,8 @@ extends Node
 
 const level01 = preload("res://levels/level01.tscn")
 
+const the_sound = preload("res://SOUNDTRACK/sfx/click main menu.ogg")
+
 const menu_scene = preload("res://menu.tscn")
 const pause_menu_scene = preload("res://pause_menu.tscn")
 const menu_win_scene = preload("res://menu_win.tscn")
@@ -178,3 +180,10 @@ func win_level():
 func music():
 	return get_node_or_null("MusicPlayer")
 
+func play_gui_sound():
+	var sound = get_node_or_null("Sound")
+	if sound == null:
+		sound = AudioStreamPlayer.new()
+		add_child(sound)
+	sound.stream = the_sound
+	sound.play()

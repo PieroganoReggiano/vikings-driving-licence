@@ -1,20 +1,15 @@
 extends CanvasLayer
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@onready var root = $".."
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+func _on_play_sound():
+	root.play_gui_sound()
 
 func _on_button_restart_pressed():
-	$"..".restart_level()
+	root.restart_level()
 
 
 func _on_button_menu_pressed():
-	$"..".drop_level()
-	$"..".show_menu()
+	root.drop_level()
+	root.show_menu()

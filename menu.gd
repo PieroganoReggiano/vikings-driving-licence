@@ -1,11 +1,13 @@
 extends Node
 
+@onready var root = $".."
 
-
+func _on_play_sound():
+	root.play_gui_sound()
 
 func _on_button_play_pressed():
-	$"..".play()
+	root.play()
 	
 
 func _on_button_quit_pressed():
-	$"..".quit()
+	root.quit()
