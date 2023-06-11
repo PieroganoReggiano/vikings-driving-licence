@@ -127,7 +127,7 @@ func handle_movement_and_physics(_delta):
 		if grounded or shall_win:
 			resistance_mult = 18.0
 		resistance_force += linear_velocity * default_resistance * resistance_mult
-		var sqrt_velocity = linear_velocity / sqrt(linear_velocity.length())
+		var sqrt_velocity = linear_velocity.normalized() * sqrt(linear_velocity.length())
 		resistance_force += sqrt_velocity * sqrt_resistance * resistance_mult
 		var resistance_force_overdrive = resistance_force.length() / mass / linear_velocity.length() * 0.1
 		if resistance_force_overdrive > 1.0:
