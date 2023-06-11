@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cf5e6wp2tu2r7"]
+[gd_scene load_steps=15 format=3 uid="uid://cf5e6wp2tu2r7"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_m4mox"]
 [ext_resource type="PackedScene" uid="uid://bmdbl14gmfbvb" path="res://levels/level03.tscn" id="2_bsfi2"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ddvbgtiadidyd" path="res://win_rune.tscn" id="7_2reyf"]
 [ext_resource type="PackedScene" uid="uid://dvw4wdkrwfdgf" path="res://door_open_rune.tscn" id="7_dq0wx"]
 [ext_resource type="PackedScene" uid="uid://dgrhyc33ixujt" path="res://lose_trigger.tscn" id="8_brjt6"]
+[ext_resource type="Texture2D" uid="uid://braxcv57dalc8" path="res://work_textures/park_here.png" id="10_vtvgs"]
 [ext_resource type="PackedScene" uid="uid://bfy7niqdtd447" path="res://door.tscn" id="13_h70rq"]
 
 [node name="Level" type="Node2D"]
@@ -41,6 +42,10 @@ position = Vector2(269, -173)
 
 [node name="Door" parent="." instance=ExtResource("13_h70rq")]
 position = Vector2(104, -51)
+
+[node name="ParkHere" type="Sprite2D" parent="."]
+position = Vector2(-94, -106)
+texture = ExtResource("10_vtvgs")
 
 [node name="Dragon" parent="." instance=ExtResource("3_22x6n")]
 position = Vector2(-281, -164)
@@ -92,7 +97,11 @@ position = Vector2(-165, -166)
 rotation = -0.785398
 
 [node name="pacholek27" parent="cones" instance=ExtResource("5_gligk")]
-position = Vector2(-130, -121)
+position = Vector2(-145, -137)
+rotation = -0.785398
+
+[node name="pacholek31" parent="cones" instance=ExtResource("5_gligk")]
+position = Vector2(-127, -90)
 rotation = -0.785398
 
 [node name="pacholek28" parent="cones" instance=ExtResource("5_gligk")]

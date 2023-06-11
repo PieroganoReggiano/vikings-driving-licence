@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://da0k52mjtytvu"]
+[gd_scene load_steps=16 format=3 uid="uid://da0k52mjtytvu"]
 
 [ext_resource type="PackedScene" uid="uid://b2ugbkp33cm32" path="res://dragon.tscn" id="1_8qery"]
 [ext_resource type="Script" path="res://level.gd" id="1_csc6m"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dgrhyc33ixujt" path="res://lose_trigger.tscn" id="8_0hhg5"]
 [ext_resource type="SpriteFrames" uid="uid://bxkr146p7alkv" path="res://work_textures/rune.res" id="10_ik1pj"]
 [ext_resource type="Script" path="res://AutoAnimatedSprite.gd" id="11_0mkmh"]
+[ext_resource type="Texture2D" uid="uid://braxcv57dalc8" path="res://work_textures/park_here.png" id="12_kpq6y"]
+[ext_resource type="Texture2D" uid="uid://bejqecr0fxpve" path="res://work_textures/controls_hint.png" id="13_7p16p"]
 
 [sub_resource type="Gradient" id="Gradient_yvhwv"]
 offsets = PackedFloat32Array(1)
@@ -45,6 +47,14 @@ script = ExtResource("11_0mkmh")
 
 [node name="WinRune" parent="." instance=ExtResource("7_oq5aa")]
 position = Vector2(-237, 127)
+
+[node name="ParkHere" type="Sprite2D" parent="."]
+position = Vector2(-308, 63)
+texture = ExtResource("12_kpq6y")
+
+[node name="ControlsHint" type="Sprite2D" parent="."]
+position = Vector2(-63, -7)
+texture = ExtResource("13_7p16p")
 
 [node name="Dragon" parent="." instance=ExtResource("1_8qery")]
 position = Vector2(-232, -129)
