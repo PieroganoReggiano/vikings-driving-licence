@@ -1,0 +1,208 @@
+[gd_scene load_steps=12 format=3 uid="uid://cn18rf4q6dayp"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_ffcwe"]
+[ext_resource type="AudioStream" uid="uid://cislwjwy4aus6" path="res://SOUNDTRACK/Music/guitar track.ogg" id="2_mirnu"]
+[ext_resource type="SpriteFrames" uid="uid://din4qw4uv851q" path="res://work_textures/level_houses.res" id="2_u4icp"]
+[ext_resource type="PackedScene" uid="uid://dgrhyc33ixujt" path="res://lose_trigger.tscn" id="3_0cn5c"]
+[ext_resource type="PackedScene" uid="uid://ddvbgtiadidyd" path="res://win_rune.tscn" id="4_yt118"]
+[ext_resource type="PackedScene" uid="uid://dvw4wdkrwfdgf" path="res://door_open_rune.tscn" id="5_184xn"]
+[ext_resource type="PackedScene" uid="uid://bfy7niqdtd447" path="res://door.tscn" id="6_rs6vv"]
+[ext_resource type="PackedScene" uid="uid://b2ugbkp33cm32" path="res://dragon.tscn" id="7_n0wff"]
+[ext_resource type="PackedScene" uid="uid://cyh60x1enoqor" path="res://enemy_flying.tscn" id="8_g3ho4"]
+[ext_resource type="PackedScene" uid="uid://crv2dmupgiyg6" path="res://pacholek.tscn" id="9_7rml5"]
+[ext_resource type="PackedScene" uid="uid://cwg3whgjuqllt" path="res://enemy_standing.tscn" id="9_rfdd7"]
+
+[node name="Level" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_ffcwe")
+level_music = ExtResource("2_mirnu")
+
+[node name="Bg" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_u4icp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="WinRune" parent="." instance=ExtResource("4_yt118")]
+position = Vector2(-138, 206)
+
+[node name="DoorOpenRune" parent="." node_paths=PackedStringArray("door") instance=ExtResource("5_184xn")]
+position = Vector2(104, -181)
+door = NodePath("../Door")
+
+[node name="Door" parent="." instance=ExtResource("6_rs6vv")]
+position = Vector2(253, -15)
+
+[node name="Dragon" parent="." instance=ExtResource("7_n0wff")]
+position = Vector2(-274, -74)
+
+[node name="enemy_flying" parent="." instance=ExtResource("8_g3ho4")]
+position = Vector2(295, 52)
+animation = &"attack"
+frame_progress = 0.0
+
+[node name="enemy_standing" parent="." instance=ExtResource("9_rfdd7")]
+position = Vector2(307, -73)
+rotation = -4.72816
+animation = &"idle"
+fireball_delay = 3.0
+
+[node name="pacholek" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-289, -25)
+
+[node name="pacholek2" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-246, -32)
+
+[node name="pacholek3" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-327, -35)
+
+[node name="pacholek4" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-328, -97)
+
+[node name="pacholek5" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-284, -116)
+
+[node name="pacholek6" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-233, -110)
+
+[node name="pacholek7" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-171, -106)
+
+[node name="pacholek8" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-115, -109)
+
+[node name="pacholek9" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-61, -122)
+
+[node name="pacholek10" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-10, -124)
+
+[node name="pacholek11" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(43, -127)
+
+[node name="pacholek12" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(69, -160)
+
+[node name="pacholek13" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(81, -220)
+
+[node name="pacholek14" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(113, -232)
+
+[node name="pacholek15" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(151, -224)
+
+[node name="pacholek16" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(153, -189)
+
+[node name="pacholek17" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(208, -111)
+
+[node name="pacholek18" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(159, 14)
+
+[node name="pacholek19" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-38, -29)
+
+[node name="pacholek20" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-86, -32)
+
+[node name="pacholek21" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-139, -26)
+
+[node name="pacholek22" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-172, 82)
+
+[node name="pacholek23" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-241, 138)
+
+[node name="pacholek24" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-232, 29)
+
+[node name="pacholek25" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-182, 225)
+
+[node name="pacholek26" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-67, 215)
+
+[node name="pacholek27" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-77, 117)
+
+[node name="pacholek28" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(-18, 137)
+
+[node name="pacholek29" parent="." instance=ExtResource("9_7rml5")]
+position = Vector2(81, 114)
+
+[node name="LoseTrigger" parent="." instance=ExtResource("3_0cn5c")]
+position = Vector2(100, -32)
+scale = Vector2(1.92, 0.44)
+grounds = true
+
+[node name="LoseTrigger12" parent="." instance=ExtResource("3_0cn5c")]
+position = Vector2(-798, 27)
+scale = Vector2(9.52, 7.2)
+
+[node name="LoseTrigger13" parent="." instance=ExtResource("3_0cn5c")]
+position = Vector2(785, 5)
+scale = Vector2(9.52, 7.2)
+
+[node name="LoseTrigger14" parent="." instance=ExtResource("3_0cn5c")]
+position = Vector2(-7, 600)
+scale = Vector2(9.52, 7.2)
+
+[node name="LoseTrigger15" parent="." instance=ExtResource("3_0cn5c")]
+position = Vector2(38, -592)
+scale = Vector2(9.52, 7.2)
+
+[node name="LoseTrigger8" parent="." instance=ExtResource("3_0cn5c")]
+position = Vector2(252, -122)
+scale = Vector2(0.52, 0.44)
+grounds = true
+
+[node name="LoseTrigger9" parent="." instance=ExtResource("3_0cn5c")]
+position = Vector2(39, -196)
+scale = Vector2(0.52, 0.44)
+grounds = true
+
+[node name="LoseTrigger10" parent="." instance=ExtResource("3_0cn5c")]
+position = Vector2(-271, 90)
+scale = Vector2(0.52, 0.44)
+grounds = true
+
+[node name="LoseTrigger11" parent="." instance=ExtResource("3_0cn5c")]
+position = Vector2(-70, 168)
+scale = Vector2(0.52, 0.44)
+grounds = true
+
+[node name="LoseTrigger2" parent="." instance=ExtResource("3_0cn5c")]
+position = Vector2(207, 117)
+scale = Vector2(1.92, 0.44)
+grounds = true
+
+[node name="LoseTrigger3" parent="." instance=ExtResource("3_0cn5c")]
+position = Vector2(-186, -168)
+scale = Vector2(1.92, 0.44)
+grounds = true
+
+[node name="LoseTrigger4" parent="." instance=ExtResource("3_0cn5c")]
+position = Vector2(-192, -14)
+scale = Vector2(0.56, 0.52)
+grounds = true
+
+[node name="LoseTrigger5" parent="." instance=ExtResource("3_0cn5c")]
+position = Vector2(-210, 179)
+scale = Vector2(0.56, 0.52)
+grounds = true
+
+[node name="LoseTrigger6" parent="." instance=ExtResource("3_0cn5c")]
+position = Vector2(28, 109)
+scale = Vector2(0.56, 0.52)
+grounds = true
+
+[node name="LoseTrigger7" parent="." instance=ExtResource("3_0cn5c")]
+position = Vector2(155, -144)
+scale = Vector2(0.52, 0.44)
+grounds = true
+
+[connection signal="animation_looped" from="enemy_flying" to="enemy_flying" method="_on_animation_looped"]
+[connection signal="animation_looped" from="enemy_standing" to="enemy_standing" method="_on_animation_looped"]
