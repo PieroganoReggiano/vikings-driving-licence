@@ -1,0 +1,97 @@
+[gd_scene load_steps=12 format=3 uid="uid://ctd8krdjnt16n"]
+
+[ext_resource type="Script" path="res://menu_credits.gd" id="1_g3e74"]
+[ext_resource type="Texture2D" uid="uid://cindowwyuxseg" path="res://work_textures/menu_shadow.png" id="2_4a0es"]
+[ext_resource type="Texture2D" uid="uid://de7cwypfp47m3" path="res://work_textures/dragon_portrait.png" id="3_r1ubf"]
+[ext_resource type="Texture2D" uid="uid://dw4a2ye665gql" path="res://work_textures/menu_paper_credits.png" id="4_v8t5d"]
+[ext_resource type="FontFile" uid="uid://cqpi3lwer7438" path="res://DungeonFont.ttf" id="5_cgup6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfjey"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myi2s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6e1ib"]
+bg_color = Color(0.792157, 0.792157, 0.792157, 1)
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_j164l"]
+button_index = 1
+pressed = true
+
+[sub_resource type="InputEventKey" id="InputEventKey_em36o"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_kgbe4"]
+events = [SubResource("InputEventJoypadButton_j164l"), SubResource("InputEventKey_em36o")]
+
+[node name="Menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_g3e74")
+
+[node name="MenuShadow" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_right = 320.0
+offset_bottom = 480.0
+grow_horizontal = 2
+texture = ExtResource("2_4a0es")
+
+[node name="DragonPortrait" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -362.0
+offset_top = 11.0
+offset_right = 278.0
+offset_bottom = 491.0
+grow_horizontal = 2
+texture = ExtResource("3_r1ubf")
+
+[node name="DragonPortrait2" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -261.0
+offset_top = 11.0
+offset_right = 379.0
+offset_bottom = 491.0
+grow_horizontal = 2
+texture = ExtResource("3_r1ubf")
+flip_h = true
+
+[node name="MenuPaper" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_top = 36.0
+offset_right = 320.0
+offset_bottom = 516.0
+grow_horizontal = 2
+texture = ExtResource("4_v8t5d")
+
+[node name="ButtonMenu" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -113.0
+offset_top = 399.0
+offset_right = 113.0
+offset_bottom = 432.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.74902, 0.14902, 0.317647, 1)
+theme_override_fonts/font = ExtResource("5_cgup6")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lfjey")
+theme_override_styles/hover = SubResource("StyleBoxFlat_myi2s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6e1ib")
+shortcut = SubResource("Shortcut_kgbe4")
+shortcut_in_tooltip = false
+text = "Ok, show me the exam"
+
+[connection signal="focus_entered" from="ButtonMenu" to="." method="_on_play_sound"]
+[connection signal="mouse_entered" from="ButtonMenu" to="." method="_on_play_sound"]
+[connection signal="pressed" from="ButtonMenu" to="." method="_on_play_sound"]
+[connection signal="pressed" from="ButtonMenu" to="." method="_on_button_menu_pressed"]
