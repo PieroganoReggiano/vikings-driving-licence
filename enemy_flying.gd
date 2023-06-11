@@ -3,12 +3,8 @@ extends AnimatedSprite2D
 @export var fireball_scene : Resource
 
 func _ready():
-<<<<<<< HEAD
-	play("idle")
-=======
 	animation = "idle"
 	play()
->>>>>>> f4bc326 (reszta smokow)
 
 func _on_timer_timeout():
 	animation = "attack"

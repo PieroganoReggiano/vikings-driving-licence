@@ -1,24 +1,59 @@
-[gd_scene load_steps=12 format=3 uid="uid://bbhhhgxl0vkir"]
+[gd_scene load_steps=9 format=3 uid="uid://bbhhhgxl0vkir"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_leldd"]
-[ext_resource type="AudioStream" uid="uid://dvuf14l867edx" path="res://SOUNDTRACK/Music/More complex melody and still fierce drums.ogg" id="2_x4uaa"]
-[ext_resource type="SpriteFrames" uid="uid://b2ttclh2cuvuu" path="res://work_textures/level_water.res" id="2_ympuv"]
+[ext_resource type="SpriteFrames" path="res://work_textures/level_water.res" id="2_ympuv"]
 [ext_resource type="PackedScene" uid="uid://b2ugbkp33cm32" path="res://dragon.tscn" id="3_18jqu"]
 [ext_resource type="PackedScene" uid="uid://crv2dmupgiyg6" path="res://pacholek.tscn" id="5_s38f8"]
-[ext_resource type="SpriteFrames" uid="uid://ftbxeufrpo4o" path="res://work_textures/flying_enemy.res" id="7_85qv5"]
 [ext_resource type="PackedScene" uid="uid://dgrhyc33ixujt" path="res://lose_trigger.tscn" id="7_ovuxy"]
+[ext_resource type="PackedScene" uid="uid://cyh60x1enoqor" path="res://enemy_flying.tscn" id="7_rl1xn"]
 [ext_resource type="PackedScene" uid="uid://mqnbbxtecbx7" path="res://win_trigger.tscn" id="8_1k2lw"]
-[ext_resource type="Script" path="res://enemy_flying.gd" id="8_6xcl1"]
-[ext_resource type="SpriteFrames" uid="uid://cfs7p3glsj3ci" path="res://work_textures/standing_enemy.res" id="8_xb4kg"]
-[ext_resource type="PackedScene" uid="uid://dqb5dd1uglfe0" path="res://enemy_fireball.tscn" id="9_d8pex"]
+[ext_resource type="PackedScene" uid="uid://cwg3whgjuqllt" path="res://enemy_standing.tscn" id="8_yq2gf"]
 
 [node name="Level" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_leldd")
-level_music = ExtResource("2_x4uaa")
 
 [node name="Bg" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_ympuv")
+
+[node name="loseboxes" type="Node2D" parent="."]
+visible = false
+
+[node name="LoseTrigger2" parent="loseboxes" instance=ExtResource("7_ovuxy")]
+position = Vector2(-19, -263)
+rotation = 0.00756871
+scale = Vector2(7, 1)
+
+[node name="LoseTrigger3" parent="loseboxes" instance=ExtResource("7_ovuxy")]
+position = Vector2(8, 317)
+scale = Vector2(7, 1)
+
+[node name="LoseTrigger7" parent="loseboxes" instance=ExtResource("7_ovuxy")]
+position = Vector2(-386, -65)
+rotation = 1.55615
+scale = Vector2(9.41271, 1)
+
+[node name="LoseTrigger8" parent="loseboxes" instance=ExtResource("7_ovuxy")]
+position = Vector2(-181, -92)
+rotation = 3.14159
+scale = Vector2(5.29271, 0.56)
+
+[node name="LoseTrigger9" parent="loseboxes" instance=ExtResource("7_ovuxy")]
+position = Vector2(204, 51)
+rotation = 3.14159
+scale = Vector2(5.29271, 0.48)
+
+[node name="LoseTrigger5" parent="loseboxes" instance=ExtResource("7_ovuxy")]
+position = Vector2(-253, 238)
+scale = Vector2(3.34098, 1.2089)
+
+[node name="LoseTrigger6" parent="loseboxes" instance=ExtResource("7_ovuxy")]
+position = Vector2(208, 170)
+scale = Vector2(3.2, 2.4)
+
+[node name="LoseTrigger10" parent="loseboxes" instance=ExtResource("7_ovuxy")]
+position = Vector2(289, -93)
+scale = Vector2(1.6, 2.4)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -35,59 +70,35 @@ rotation = 0.261799
 position = Vector2(-277, -19)
 rotation = 0.261799
 
-[node name="LoseTrigger2" parent="." instance=ExtResource("7_ovuxy")]
-position = Vector2(-11, -333)
-rotation = 0.00756871
-scale = Vector2(7, 1)
-
-[node name="LoseTrigger3" parent="." instance=ExtResource("7_ovuxy")]
-position = Vector2(3, 342)
-rotation = 0.0268997
-scale = Vector2(7, 1)
-
-[node name="LoseTrigger4" parent="." instance=ExtResource("7_ovuxy")]
-position = Vector2(420, 43)
-rotation = 1.52541
-scale = Vector2(8.40037, 1)
-
-[node name="LoseTrigger7" parent="." instance=ExtResource("7_ovuxy")]
-position = Vector2(-386, -65)
-rotation = 1.55615
-scale = Vector2(9.41271, 1)
-
 [node name="WinTrigger" parent="." instance=ExtResource("8_1k2lw")]
 position = Vector2(269, -173)
 
-[node name="enemy_flying" type="AnimatedSprite2D" parent="."]
-position = Vector2(272, 56)
-rotation = 1.5708
-sprite_frames = ExtResource("7_85qv5")
+[node name="enemy_flying" parent="." instance=ExtResource("7_rl1xn")]
+animation = &"attack"
+frame_progress = 0.0
+
+[node name="enemy_standing" parent="." instance=ExtResource("8_yq2gf")]
+position = Vector2(-263, 190)
+rotation = -2.61799
 animation = &"idle"
-frame_progress = 0.635339
-script = ExtResource("8_6xcl1")
-fireball_scene = ExtResource("9_d8pex")
+frame_progress = 0.541624
+fireball_delay = 3.0
 
-[node name="Timer" type="Timer" parent="enemy_flying"]
-wait_time = 4.0
-autostart = true
+[node name="enemy_standing2" parent="." instance=ExtResource("8_yq2gf")]
+position = Vector2(246, 163)
+rotation = 1.83259
+animation = &"idle"
+frame_progress = 0.0948346
+fireball_delay = 3.5
 
-[node name="enemy_standing" type="AnimatedSprite2D" parent="."]
-position = Vector2(-264, 185)
-rotation = 4.18879
-sprite_frames = ExtResource("8_xb4kg")
-animation = &"attack"
+[node name="enemy_standing3" parent="." instance=ExtResource("8_yq2gf")]
+position = Vector2(255, -110)
+rotation = 2.09439
+animation = &"idle"
+frame_progress = 0.488483
+fireball_delay = 5.0
 
-[node name="enemy_standing2" type="AnimatedSprite2D" parent="."]
-position = Vector2(252, -107)
-rotation = 2.0944
-sprite_frames = ExtResource("8_xb4kg")
-animation = &"attack"
-
-[node name="enemy_standing3" type="AnimatedSprite2D" parent="."]
-position = Vector2(244, 164)
-rotation = 2.0944
-sprite_frames = ExtResource("8_xb4kg")
-animation = &"attack"
-frame_progress = 0.632082
-
-[connection signal="timeout" from="enemy_flying/Timer" to="enemy_flying" method="_on_timer_timeout"]
+[connection signal="animation_looped" from="enemy_flying" to="enemy_flying" method="_on_animation_looped"]
+[connection signal="animation_looped" from="enemy_standing" to="enemy_standing" method="_on_animation_looped"]
+[connection signal="animation_looped" from="enemy_standing2" to="enemy_standing2" method="_on_animation_looped"]
+[connection signal="animation_looped" from="enemy_standing3" to="enemy_standing3" method="_on_animation_looped"]

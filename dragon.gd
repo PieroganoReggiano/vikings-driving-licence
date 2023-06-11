@@ -17,7 +17,7 @@ var shall_lose = false
 
 func _ready():
 	get_node("/root/Root").dragon = self
-	$Sprite.animation = "idle"
+	$Sprite.play("idle")
 
 func anim_idle():
 	var sprite = $"Sprite"
