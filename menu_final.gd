@@ -11,5 +11,5 @@ func _on_button_menu_pressed():
 
 func _process(delta):
 	time += delta
-	if time > 5.0:
-		$TextureRect/ButtonMenu.shortcut = skip_shortcut
+	#if time > 5.0:
+	#	$TextureRect/ButtonMenu.shortcut = skip_shortcut
