@@ -136,7 +136,7 @@ position = Vector2(81, 114)
 [node name="LoseTrigger" parent="." instance=ExtResource("3_0cn5c")]
 position = Vector2(100, -32)
 scale = Vector2(1.92, 0.44)
-grounds = true
+type = 1
 
 [node name="LoseTrigger12" parent="." instance=ExtResource("3_0cn5c")]
 position = Vector2(-798, 27)
@@ -157,52 +157,52 @@ scale = Vector2(9.52, 7.2)
 [node name="LoseTrigger8" parent="." instance=ExtResource("3_0cn5c")]
 position = Vector2(252, -122)
 scale = Vector2(0.52, 0.44)
-grounds = true
+type = 1
 
 [node name="LoseTrigger9" parent="." instance=ExtResource("3_0cn5c")]
 position = Vector2(39, -196)
 scale = Vector2(0.52, 0.44)
-grounds = true
+type = 1
 
 [node name="LoseTrigger10" parent="." instance=ExtResource("3_0cn5c")]
 position = Vector2(-271, 90)
 scale = Vector2(0.52, 0.44)
-grounds = true
+type = 1
 
 [node name="LoseTrigger11" parent="." instance=ExtResource("3_0cn5c")]
 position = Vector2(-70, 168)
 scale = Vector2(0.52, 0.44)
-grounds = true
+type = 1
 
 [node name="LoseTrigger2" parent="." instance=ExtResource("3_0cn5c")]
 position = Vector2(207, 117)
 scale = Vector2(1.92, 0.44)
-grounds = true
+type = 1
 
 [node name="LoseTrigger3" parent="." instance=ExtResource("3_0cn5c")]
 position = Vector2(-186, -168)
 scale = Vector2(1.92, 0.44)
-grounds = true
+type = 1
 
 [node name="LoseTrigger4" parent="." instance=ExtResource("3_0cn5c")]
 position = Vector2(-192, -14)
 scale = Vector2(0.56, 0.52)
-grounds = true
+type = 1
 
 [node name="LoseTrigger5" parent="." instance=ExtResource("3_0cn5c")]
 position = Vector2(-210, 179)
 scale = Vector2(0.56, 0.52)
-grounds = true
+type = 1
 
 [node name="LoseTrigger6" parent="." instance=ExtResource("3_0cn5c")]
 position = Vector2(28, 109)
 scale = Vector2(0.56, 0.52)
-grounds = true
+type = 1
 
 [node name="LoseTrigger7" parent="." instance=ExtResource("3_0cn5c")]
 position = Vector2(155, -144)
 scale = Vector2(0.52, 0.44)
-grounds = true
+type = 1
 
 [connection signal="animation_looped" from="enemy_flying" to="enemy_flying" method="_on_animation_looped"]
 [connection signal="animation_looped" from="enemy_standing" to="enemy_standing" method="_on_animation_looped"]

@@ -27,56 +27,56 @@ sprite_frames = ExtResource("2_ympuv")
 position = Vector2(-19, -263)
 rotation = 0.00756871
 scale = Vector2(7, 1)
-grounds = true
+type = 2
 
 [node name="LoseTrigger3" parent="loseboxes" instance=ExtResource("7_ovuxy")]
 position = Vector2(8, 317)
 scale = Vector2(7, 1)
-grounds = true
+type = 2
 
 [node name="LoseTrigger7" parent="loseboxes" instance=ExtResource("7_ovuxy")]
 position = Vector2(-370, -70)
 rotation = 1.57639
 scale = Vector2(9.41271, 1)
-grounds = true
+type = 2
 
 [node name="LoseTrigger12" parent="loseboxes" instance=ExtResource("7_ovuxy")]
 position = Vector2(-370, -70)
 rotation = 1.57639
 scale = Vector2(9.41271, 1)
-grounds = true
+type = 2
 
 [node name="LoseTrigger8" parent="loseboxes" instance=ExtResource("7_ovuxy")]
 position = Vector2(-181, -92)
 rotation = 3.14159
 scale = Vector2(5.29271, 0.56)
-grounds = true
+type = 2
 
 [node name="LoseTrigger9" parent="loseboxes" instance=ExtResource("7_ovuxy")]
 position = Vector2(204, 51)
 rotation = 3.14159
 scale = Vector2(5.29271, 0.48)
-grounds = true
+type = 2
 
 [node name="LoseTrigger5" parent="loseboxes" instance=ExtResource("7_ovuxy")]
 position = Vector2(-253, 238)
 scale = Vector2(3.34098, 1.2089)
-grounds = true
+type = 2
 
 [node name="LoseTrigger11" parent="loseboxes" instance=ExtResource("7_ovuxy")]
 position = Vector2(-463, 143)
 scale = Vector2(3.34098, 1.2089)
-grounds = true
+type = 2
 
 [node name="LoseTrigger6" parent="loseboxes" instance=ExtResource("7_ovuxy")]
 position = Vector2(208, 170)
 scale = Vector2(3.2, 2.4)
-grounds = true
+type = 2
 
 [node name="LoseTrigger10" parent="loseboxes" instance=ExtResource("7_ovuxy")]
 position = Vector2(289, -93)
 scale = Vector2(1.6, 2.4)
-grounds = true
+type = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

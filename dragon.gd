@@ -15,10 +15,8 @@ var fireball_wait = 0.5
 var shall_win = false
 var shall_lose = false
 var grounded = false
-var default_mass : float = 0.0
 
 func _ready():
-	default_mass = mass
 	get_node("/root/Root").dragon = self
 	$Sprite.play("idle")
 
@@ -64,12 +62,20 @@ func _physics_process(delta):
 	handle_animation(delta)
 	
 	if grounded or shall_win:
-		mass = 20.0 * default_mass
+		set_collision_layer_value(1, false)
+		set_collision_layer_value(5, false)
+		set_collision_layer_value(6, false)
+		set_collision_layer_value(7, false)
+		set_collision_mask_value(1, false)
+		set_collision_mask_value(5, false)
+		set_collision_mask_value(6, false)
+		set_collision_mask_value(7, false)
 
 func handle_movement_and_physics(_delta):
 	var acceleration_force = Vector2.ZERO
 	move_vector = Vector2.ZERO
 	
+		
 	if not $Sprite.animation == "attack_loop" and not grounded and not shall_win:
 		move_vector = Vector2(Input.get_axis("forward", "backward"), Input.get_axis("left", "right"))
 		if Input.is_action_just_pressed("fire") and fireball_wait <= 0.0:
@@ -92,7 +98,7 @@ func handle_movement_and_physics(_delta):
 		var resistance_force = Vector2.ZERO
 		var resistance_mult = 1.0
 		if grounded or shall_win:
-			resistance_mult = 100.0
+			resistance_mult = 18.0
 		resistance_force += linear_velocity * default_resistance * resistance_mult
 		var sqrt_velocity = linear_velocity / sqrt(linear_velocity.length())
 		resistance_force += sqrt_velocity * sqrt_resistance * resistance_mult
@@ -154,8 +160,9 @@ func _on_sprite_animation_looped():
 func drown():
 #	controls_locked = true
 	$drown.emitting = true
-	var timer = Timer.new()
-	add_child(timer)
-	timer.start(2)
-	await timer.timeout
-	shall_lose = true
+	#var timer = Timer.new()
+	#add_child(timer)
+	grounded = true
+	$Sprite.modulate = Color(0.7, 0.77, 0.77, 1.0)
+	#timer.start(2)
+	#await timer.timeout
