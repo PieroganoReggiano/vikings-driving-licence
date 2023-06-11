@@ -36,7 +36,7 @@ texture = ExtResource("1_tihsa")
 metadata/_edit_lock_ = true
 
 [node name="RuneRide" type="AnimatedSprite2D" parent="."]
-position = Vector2(-247, -130)
+position = Vector2(-235, -130)
 sprite_frames = ExtResource("10_ik1pj")
 animation = &"ride"
 script = ExtResource("11_0mkmh")
@@ -47,7 +47,7 @@ script = ExtResource("11_0mkmh")
 position = Vector2(-237, 127)
 
 [node name="Dragon" parent="." instance=ExtResource("1_8qery")]
-position = Vector2(-210, -124)
+position = Vector2(-232, -129)
 
 [node name="cones" type="Node2D" parent="."]
 

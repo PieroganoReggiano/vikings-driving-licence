@@ -27,7 +27,7 @@ metadata/_edit_lock_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="RuneRide" type="AnimatedSprite2D" parent="."]
-position = Vector2(-310, -209)
+position = Vector2(-284, -205)
 sprite_frames = ExtResource("5_2beds")
 animation = &"ride"
 script = ExtResource("6_vtl4j")
