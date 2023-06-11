@@ -14,8 +14,11 @@ var fireball_wait = 0.5
 
 var shall_win = false
 var shall_lose = false
+var grounded = false
+var default_mass : float = 0.0
 
 func _ready():
+	default_mass = mass
 	get_node("/root/Root").dragon = self
 	$Sprite.play("idle")
 
@@ -59,6 +62,9 @@ func _physics_process(delta):
 	handle_cooldown(delta)
 	handle_movement_and_physics(delta)
 	handle_animation(delta)
+	
+	if grounded or shall_win:
+		mass = 20.0 * default_mass
 
 
 func handle_movement_and_physics(_delta):
@@ -66,7 +72,7 @@ func handle_movement_and_physics(_delta):
 	move_vector = Vector2.ZERO
 	
 		
-	if not $Sprite.animation == "attack_loop":
+	if not $Sprite.animation == "attack_loop" and not grounded and not shall_win:
 		move_vector = Vector2(Input.get_axis("forward", "backward"), Input.get_axis("left", "right"))
 		if Input.is_action_just_pressed("fire") and fireball_wait <= 0.0:
 			requesting_fire = true
@@ -88,11 +94,20 @@ func handle_movement_and_physics(_delta):
 	linear_velocity = 0.8 * linear_velocity + 0.2 * linear_velocity.rotated(rotation-linear_velocity.angle())
 	
 	if (linear_velocity != Vector2.ZERO):
-		acceleration_force -= linear_velocity * default_resistance
+		var resistance_force = Vector2.ZERO
+		var resistance_mult = 1.0
+		if grounded or shall_win:
+			resistance_mult = 100.0
+		resistance_force += linear_velocity * default_resistance * resistance_mult
 		var sqrt_velocity = linear_velocity / sqrt(linear_velocity.length())
-		acceleration_force -= sqrt_velocity * sqrt_resistance
+		resistance_force += sqrt_velocity * sqrt_resistance * resistance_mult
+		var resistance_force_overdrive = resistance_force.length() / mass / linear_velocity.length() * 0.1
+		if resistance_force_overdrive > 1.0:
+			resistance_force /= resistance_force_overdrive
+		acceleration_force -= resistance_force
 	
-	apply_central_force(acceleration_force)
+	if is_finite(acceleration_force.length()):
+		apply_central_force(acceleration_force)
 	
 	set_angular_velocity(turn_speed * move_vector.y * 1.0/60.0)
 

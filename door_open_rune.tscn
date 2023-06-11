@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvw4wdkrwfdgf"]
+
+[ext_resource type="Script" path="res://door_open_rune.gd" id="1_3d602"]
+[ext_resource type="SpriteFrames" uid="uid://bxkr146p7alkv" path="res://work_textures/rune.res" id="2_f783r"]
+[ext_resource type="Script" path="res://AutoAnimatedSprite.gd" id="3_jqnic"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahrqm"]
+size = Vector2(30, 30)
+
+[node name="DoorOpenRune" type="Area2D"]
+collision_layer = 64
+collision_mask = 64
+script = ExtResource("1_3d602")
+
+[node name="Area" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ahrqm")
+
+[node name="RuneWealth" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, 0)
+sprite_frames = ExtResource("2_f783r")
+animation = &"possesion"
+script = ExtResource("3_jqnic")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
