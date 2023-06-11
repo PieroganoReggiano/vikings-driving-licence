@@ -1,0 +1,152 @@
+[gd_scene load_steps=12 format=3 uid="uid://co3rtqcfp6vto"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_43hq7"]
+[ext_resource type="AudioStream" uid="uid://b7vbkmv3ck8m0" path="res://SOUNDTRACK/Music/spokojniejszy loop do chillowego lvl'a.ogg" id="2_ugbkk"]
+[ext_resource type="SpriteFrames" uid="uid://bxkc0hd0reuhq" path="res://work_textures/second_level_water.res" id="3_45g5f"]
+[ext_resource type="SpriteFrames" uid="uid://bxkr146p7alkv" path="res://work_textures/rune.res" id="5_d6q7w"]
+[ext_resource type="Script" path="res://AutoAnimatedSprite.gd" id="6_v56hh"]
+[ext_resource type="PackedScene" uid="uid://dgrhyc33ixujt" path="res://lose_trigger.tscn" id="7_wy53k"]
+[ext_resource type="PackedScene" uid="uid://ddvbgtiadidyd" path="res://win_rune.tscn" id="8_vaor8"]
+[ext_resource type="PackedScene" uid="uid://dvw4wdkrwfdgf" path="res://door_open_rune.tscn" id="9_icnc2"]
+[ext_resource type="PackedScene" uid="uid://bfy7niqdtd447" path="res://door.tscn" id="10_kngev"]
+[ext_resource type="PackedScene" uid="uid://b2ugbkp33cm32" path="res://dragon.tscn" id="13_ou288"]
+[ext_resource type="PackedScene" uid="uid://cwg3whgjuqllt" path="res://enemy_standing.tscn" id="15_u78v5"]
+
+[node name="Level" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_43hq7")
+level_music = ExtResource("2_ugbkk")
+
+[node name="Bg" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_45g5f")
+
+[node name="RuneRide" type="AnimatedSprite2D" parent="."]
+position = Vector2(7, -200)
+sprite_frames = ExtResource("5_d6q7w")
+animation = &"ride"
+script = ExtResource("6_v56hh")
+
+[node name="loseboxes" type="Node2D" parent="."]
+
+[node name="LoseTrigger7" parent="loseboxes" instance=ExtResource("7_wy53k")]
+position = Vector2(-370, -70)
+rotation = 1.57639
+scale = Vector2(9.41271, 1)
+type = 2
+
+[node name="LoseTrigger8" parent="loseboxes" instance=ExtResource("7_wy53k")]
+position = Vector2(-356, -81)
+rotation = 3.14159
+scale = Vector2(5.29271, 12)
+type = 2
+
+[node name="LoseTrigger9" parent="loseboxes" instance=ExtResource("7_wy53k")]
+position = Vector2(-343, 584)
+rotation = 3.14159
+scale = Vector2(5.29271, 12)
+type = 2
+
+[node name="LoseTrigger10" parent="loseboxes" instance=ExtResource("7_wy53k")]
+position = Vector2(362, 618)
+rotation = 3.14159
+scale = Vector2(5.29271, 12)
+type = 2
+
+[node name="LoseTrigger12" parent="loseboxes" instance=ExtResource("7_wy53k")]
+position = Vector2(375, -721)
+rotation = 3.14159
+scale = Vector2(5.29271, 12)
+type = 2
+
+[node name="LoseTrigger13" parent="loseboxes" instance=ExtResource("7_wy53k")]
+position = Vector2(360, -775)
+rotation = 3.14159
+scale = Vector2(5.29271, 12)
+type = 2
+
+[node name="LoseTrigger14" parent="loseboxes" instance=ExtResource("7_wy53k")]
+position = Vector2(556, -476)
+rotation = 3.14159
+scale = Vector2(5.29271, 12)
+type = 2
+
+[node name="LoseTrigger15" parent="loseboxes" instance=ExtResource("7_wy53k")]
+position = Vector2(470, 583)
+rotation = 3.14159
+scale = Vector2(5.29271, 12)
+type = 2
+
+[node name="LoseTrigger16" parent="loseboxes" instance=ExtResource("7_wy53k")]
+position = Vector2(-343, -777)
+rotation = 3.14159
+scale = Vector2(5.29271, 12)
+type = 2
+
+[node name="LoseTrigger11" parent="loseboxes" instance=ExtResource("7_wy53k")]
+position = Vector2(-463, 143)
+scale = Vector2(3.34098, 1.2089)
+type = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="WinRune" parent="." instance=ExtResource("8_vaor8")]
+position = Vector2(6, 198)
+
+[node name="DoorOpenRune" parent="." node_paths=PackedStringArray("door") instance=ExtResource("9_icnc2")]
+position = Vector2(2, -72)
+door = NodePath("../Door")
+
+[node name="Door" parent="." instance=ExtResource("10_kngev")]
+position = Vector2(3, 89)
+
+[node name="Dragon" parent="." instance=ExtResource("13_ou288")]
+position = Vector2(9, -199)
+rotation = 1.57079
+
+[node name="enemy_standing" parent="." instance=ExtResource("15_u78v5")]
+position = Vector2(-144, 213)
+rotation = -1.85525
+animation = &"idle"
+fireball_delay = 3.0
+
+[node name="enemy_standing2" parent="." instance=ExtResource("15_u78v5")]
+position = Vector2(-143, 109)
+rotation = 4.69192
+animation = &"idle"
+frame_progress = 0.0948346
+fireball_delay = 3.5
+
+[node name="enemy_standing3" parent="." instance=ExtResource("15_u78v5")]
+position = Vector2(135, 34)
+rotation = 2.09439
+animation = &"idle"
+frame_progress = 0.488483
+fireball_delay = 5.0
+
+[node name="enemy_standing4" parent="." instance=ExtResource("15_u78v5")]
+position = Vector2(135, 143)
+rotation = 1.64534
+animation = &"idle"
+frame_progress = 0.488483
+fireball_delay = 5.0
+
+[node name="enemy_standing5" parent="." instance=ExtResource("15_u78v5")]
+position = Vector2(-148, -19)
+rotation = 4.37363
+animation = &"idle"
+frame_progress = 0.488483
+fireball_delay = 5.0
+
+[node name="enemy_standing6" parent="." instance=ExtResource("15_u78v5")]
+position = Vector2(136, -157)
+rotation = 0.808687
+animation = &"idle"
+frame_progress = 0.488483
+fireball_delay = 5.0
+
+[connection signal="animation_looped" from="enemy_standing" to="enemy_standing" method="_on_animation_looped"]
+[connection signal="animation_looped" from="enemy_standing2" to="enemy_standing2" method="_on_animation_looped"]
+[connection signal="animation_looped" from="enemy_standing3" to="enemy_standing3" method="_on_animation_looped"]
+[connection signal="animation_looped" from="enemy_standing4" to="enemy_standing4" method="_on_animation_looped"]
+[connection signal="animation_looped" from="enemy_standing5" to="enemy_standing5" method="_on_animation_looped"]
+[connection signal="animation_looped" from="enemy_standing6" to="enemy_standing6" method="_on_animation_looped"]

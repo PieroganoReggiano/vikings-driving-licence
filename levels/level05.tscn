@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cn18rf4q6dayp"]
+[gd_scene load_steps=15 format=3 uid="uid://cn18rf4q6dayp"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_ffcwe"]
 [ext_resource type="AudioStream" uid="uid://cislwjwy4aus6" path="res://SOUNDTRACK/Music/guitar track.ogg" id="2_mirnu"]
 [ext_resource type="SpriteFrames" uid="uid://din4qw4uv851q" path="res://work_textures/level_houses.res" id="2_u4icp"]
+[ext_resource type="PackedScene" uid="uid://co3rtqcfp6vto" path="res://levels/level06.tscn" id="2_vw7ce"]
 [ext_resource type="PackedScene" uid="uid://dgrhyc33ixujt" path="res://lose_trigger.tscn" id="3_0cn5c"]
 [ext_resource type="SpriteFrames" uid="uid://bxkr146p7alkv" path="res://work_textures/rune.res" id="4_e6xrk"]
 [ext_resource type="PackedScene" uid="uid://ddvbgtiadidyd" path="res://win_rune.tscn" id="4_yt118"]
@@ -17,6 +18,7 @@
 [node name="Level" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_ffcwe")
+next_level = ExtResource("2_vw7ce")
 level_music = ExtResource("2_mirnu")
 
 [node name="Bg" type="AnimatedSprite2D" parent="."]
