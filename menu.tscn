@@ -123,6 +123,23 @@ shortcut = SubResource("Shortcut_kgbe4")
 shortcut_in_tooltip = false
 text = "Give up!"
 
+[node name="ButtonCredits" type="Button" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+offset_right = 115.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.74902, 0.14902, 0.317647, 1)
+theme_override_fonts/font = ExtResource("3_lysej")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lfjey")
+theme_override_styles/hover = SubResource("StyleBoxFlat_myi2s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6e1ib")
+shortcut = SubResource("Shortcut_kgbe4")
+shortcut_in_tooltip = false
+text = "Credits"
+
 [connection signal="focus_entered" from="MenuPaper/ButtonPlay" to="." method="_on_play_sound"]
 [connection signal="mouse_entered" from="MenuPaper/ButtonPlay" to="." method="_on_play_sound"]
 [connection signal="pressed" from="MenuPaper/ButtonPlay" to="." method="_on_play_sound"]
@@ -131,3 +148,7 @@ text = "Give up!"
 [connection signal="mouse_entered" from="ButtonQuit" to="." method="_on_play_sound"]
 [connection signal="pressed" from="ButtonQuit" to="." method="_on_play_sound"]
 [connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="focus_entered" from="ButtonCredits" to="." method="_on_play_sound"]
+[connection signal="mouse_entered" from="ButtonCredits" to="." method="_on_play_sound"]
+[connection signal="pressed" from="ButtonCredits" to="." method="_on_play_sound"]
+[connection signal="pressed" from="ButtonCredits" to="." method="_on_button_credits_pressed"]

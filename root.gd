@@ -9,6 +9,7 @@ const pause_menu_scene = preload("res://pause_menu.tscn")
 const menu_win_scene = preload("res://menu_win.tscn")
 const menu_lose_scene = preload("res://menu_lose.tscn")
 const menu_final_scene = preload("res://menu_final.tscn")
+const menu_credits_scene = preload("res://menu_credits.tscn")
 
 var dragon = null
 
@@ -43,7 +44,17 @@ func show_menu():
 			music().play_pause_menu()
 		else:
 			music().play_menu()
-
+			
+func show_credits():
+	var menu = get_node_or_null("Menu")
+	if not menu or is_any_game():
+		return
+	drop_menu()
+	var menu_created = menu_credits_scene.instantiate()
+	add_child(menu_created)
+	menu_created.name = "Menu"
+	
+			
 func show_win():
 	if not is_any_game():
 		return
