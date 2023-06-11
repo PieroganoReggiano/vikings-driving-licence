@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bf65570blp4c3"]
+[gd_scene load_steps=17 format=3 uid="uid://bf65570blp4c3"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_leldd"]
 [ext_resource type="PackedScene" uid="uid://cn18rf4q6dayp" path="res://levels/level05.tscn" id="2_7eboe"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dvw4wdkrwfdgf" path="res://door_open_rune.tscn" id="5_tpjtq"]
 [ext_resource type="SpriteFrames" uid="uid://bxkr146p7alkv" path="res://work_textures/rune.res" id="5_xd6mv"]
 [ext_resource type="Script" path="res://AutoAnimatedSprite.gd" id="6_bpqtr"]
+[ext_resource type="Texture2D" uid="uid://beb2jcrxab21y" path="res://work_textures/attack_hint.png" id="7_oahjt"]
 [ext_resource type="PackedScene" uid="uid://dgrhyc33ixujt" path="res://lose_trigger.tscn" id="7_ovuxy"]
 [ext_resource type="PackedScene" uid="uid://cyh60x1enoqor" path="res://enemy_flying.tscn" id="7_rl1xn"]
 [ext_resource type="PackedScene" uid="uid://ddvbgtiadidyd" path="res://win_rune.tscn" id="8_1k2lw"]
@@ -30,6 +31,10 @@ position = Vector2(-253, -167)
 sprite_frames = ExtResource("5_xd6mv")
 animation = &"ride"
 script = ExtResource("6_bpqtr")
+
+[node name="AttackHint" type="Sprite2D" parent="."]
+position = Vector2(18, -95)
+texture = ExtResource("7_oahjt")
 
 [node name="loseboxes" type="Node2D" parent="."]
 
