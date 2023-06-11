@@ -20,7 +20,6 @@ collision_layer = 87
 collision_mask = 87
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.959, 1.959)
 sprite_frames = ExtResource("3_s4j2q")
 animation = &"idle"
 
