@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://mwe4pu8ysvq7"]
+[gd_scene load_steps=12 format=3 uid="uid://dgd5ts0dwgp5k"]
 
 [ext_resource type="Script" path="res://menu_final.gd" id="1_2ciip"]
-[ext_resource type="Texture2D" uid="uid://bayig828eq1f4" path="res://work_textures/win_paper.png" id="2_004yr"]
+[ext_resource type="Texture2D" uid="uid://cindowwyuxseg" path="res://work_textures/menu_shadow.png" id="2_hvyda"]
 [ext_resource type="FontFile" uid="uid://cqpi3lwer7438" path="res://DungeonFont.ttf" id="3_8314b"]
+[ext_resource type="Texture2D" uid="uid://de7cwypfp47m3" path="res://work_textures/dragon_portrait.png" id="3_msp8y"]
+[ext_resource type="Texture2D" uid="uid://bn7268maaxa3g" path="res://work_textures/final_paper.png" id="4_8jtca"]
+[ext_resource type="Texture2D" uid="uid://dd5q7bgx138oa" path="res://work_textures/license.png" id="5_uqax1"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_5db82"]
 device = -1
@@ -26,26 +29,37 @@ process_mode = 3
 script = ExtResource("1_2ciip")
 skip_shortcut = SubResource("Shortcut_qwqrr")
 
+[node name="TextureRect4" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = -93.0
+offset_right = 288.0
+offset_bottom = 387.0
+grow_horizontal = 2
+texture = ExtResource("2_hvyda")
+stretch_mode = 2
+
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -320.0
-offset_top = 58.0
-offset_right = 320.0
-offset_bottom = 538.0
+offset_left = -583.0
+offset_top = 22.0
+offset_right = 57.0
+offset_bottom = 502.0
 grow_horizontal = 2
-texture = ExtResource("2_004yr")
+texture = ExtResource("4_8jtca")
 
-[node name="ButtonMenu" type="Button" parent="TextureRect"]
-layout_mode = 1
+[node name="ButtonMenu" type="Button" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 46.0
-offset_top = 254.0
-offset_right = 134.0
-offset_bottom = 284.0
+offset_left = -384.0
+offset_top = 324.0
+offset_right = -262.0
+offset_bottom = 354.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.6, 0.490196, 0.462745, 1)
 theme_override_fonts/font = ExtResource("3_8314b")
@@ -53,7 +67,33 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxEmpty_clswj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qu8cj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qs4je")
+shortcut_feedback = false
 shortcut_in_tooltip = false
-text = "Go home xd"
+text = "Go to main menu"
 
-[connection signal="pressed" from="TextureRect/ButtonMenu" to="." method="_on_button_menu_pressed"]
+[node name="TextureRect3" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_top = -76.0
+offset_right = 516.0
+offset_bottom = 404.0
+grow_horizontal = 2
+texture = ExtResource("3_msp8y")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0001
+offset_top = 273.0
+offset_right = 273.0
+offset_bottom = 593.0
+grow_horizontal = 2
+rotation = -0.282678
+texture = ExtResource("5_uqax1")
+stretch_mode = 2
+
+[connection signal="pressed" from="ButtonMenu" to="." method="_on_button_menu_pressed"]
