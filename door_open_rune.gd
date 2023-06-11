@@ -4,4 +4,4 @@ extends "res://rune_trigger.gd"
 
 func trigger(_dragon):
 	if door != null:
-		door.open()
+		door.start_open()

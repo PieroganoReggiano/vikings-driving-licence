@@ -1,26 +1,28 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfy7niqdtd447"]
 
 [ext_resource type="Script" path="res://door.gd" id="1_5b7tj"]
-[ext_resource type="Texture2D" uid="uid://dywewrtxspofp" path="res://icon.svg" id="2_kg72a"]
+[ext_resource type="SpriteFrames" uid="uid://ci4y340refm1v" path="res://work_textures/door_rock.res" id="3_s4j2q"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn5mp"]
-size = Vector2(60, 60)
+[sub_resource type="CircleShape2D" id="CircleShape2D_324l2"]
+radius = 32.0
 
 [node name="Door" type="Area2D"]
 collision_layer = 113
 collision_mask = 113
 script = ExtResource("1_5b7tj")
 
-[node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_kg72a")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_vn5mp")
+shape = SubResource("CircleShape2D_324l2")
 one_way_collision_margin = 4.3
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 87
 collision_mask = 87
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.959, 1.959)
+sprite_frames = ExtResource("3_s4j2q")
+animation = &"idle"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
